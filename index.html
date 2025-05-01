@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/vendor.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
    
 </head>
 
@@ -670,17 +670,8 @@ document.addEventListener('DOMContentLoaded', function() {
         accomplishmentsContainer.appendChild(awardElement);
     });
 });
-
-// Load external JS files
-document.addEventListener('DOMContentLoaded', function() {
-    const script1 = document.createElement('script');
-    script1.src = '/js/plugins.js';
-    document.body.appendChild(script1);
-    
-    const script2 = document.createElement('script');
-    script2.src = '/js/main.js';
-    document.body.appendChild(script2);
-});
 </script>
+<script src='js/plugins.js'></script>
+<script src='js/main.js'></script>
 </body>
 </html>
