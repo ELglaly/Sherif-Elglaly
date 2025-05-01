@@ -101,15 +101,21 @@
             </div>
         </section>
 
-        <section id="accomplishments" class="s-accomplishments target-section">
+        <section id="accomplishments">
             <div class="row contact-top">
-                <div class="column lg-12">
-                    <h2 class="text-pretitle">Accomplishments</h2>
-                    <p class="h1">Things I've built, led, or achieved that I'm proud of.</p>
+              <div class="column lg-12">
+                <h2 class="text-pretitle">Accomplishments</h2>
+                <p class="h1">Things I've built, led, or achieved that I'm proud of.</p>
+             </div>
+            </div>
+
+            <div class="row about-timelines" data-animate-block>
+                <div class="certifications-grid" id="accomplishments-container">
+                      
                 </div>
             </div>
-            <div class="folio-entries" id="accomplishments-container"></div>
-        </section>
+          </section>
+          
 
         <section id="projects" class="s-works target-section">
             <div class="row works-portfolio">
@@ -206,7 +212,7 @@
                     <h3 class="text-pretitle">Social</h3>
                     <ul class="contact-links">
                         <li><a id="linkedin-contact" href="#" target="_blank"><img src="images/linkedin.svg" width="50" height="50" alt="LinkedIn icon"></a></li>
-                        <li><a id="github-contact" href="#" target="_blank"> <img src="images/icons8-github.svg" width="50" height="50" alt="GitHub icon"></a></li>
+                        <li><a id="github-contact" href="#" target="_blank"> <img src="images/icons/github.png" width="50" height="50" alt="GitHub icon"></a></li>
                     </ul>
                 </div>
                 <div class="column lg-4 md-12 contact-block">
@@ -323,7 +329,7 @@ const profile = {
             name: "E-commerce Platform",
             description: "A robust and scalable e-commerce platform built with Spring Boot. This system enables users to browse products, manage their shopping cart, and complete secure purchases. It includes an admin panel for managing products, orders, and users. Designed with modern best practices, this project is ideal for businesses looking to establish or expand their online presence.",
             link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
-            image: "images/icons8-github.svg",
+            image: "images/icons/github.png",
             technologiesUsed: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "JavaMailSender", "MySQL", "H2 Database (Testing)", "Stripe/PayPal APIs", "React", "HTML", "CSS", "JavaScript", "Redis", "🧪 Tested with JUnit 5 & Mockito", " 🔐 JWT-based"]
         },
         {
@@ -331,7 +337,7 @@ const profile = {
             name: "Lexical Analyzer & Arabic Language Parser",
             description: "This project implements a Lexical Analyzer and Parser for a custom programming language that supports Arabic keywords. It features tokenization and syntactic analysis capabilities to build an Abstract Syntax Tree (AST) for source code interpretation.",
             link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
-            image:"images/icons8-github.svg",
+            image:"images/icons/github.png",
             technologiesUsed: ["C#", ".NET Core", "ASP.NET", "Visual Studio Code", "HTML", "CSS"]
         },
         {
@@ -339,7 +345,7 @@ const profile = {
             name: "AI-Powered Learning Roadmap Generator",
             description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
             link: "https://github.com/ELglaly/Roadmap-Makerr",
-            image: "images/icons8-github.svg",
+            image: "images/icons/github.png",
             technologiesUsed: ["Java 23", "Spring Boot 3.4.3", "Spring Security with JWT", "Spring WebSocket", "Spring Data JPA", "Spring AI OpenAI", "Google Cloud AI Platform", "MySQL", "Redis 7.4.2", "Maven 3.9.9", "Lombok", "MapStruct", "JUnit 5"]
         }
     ],
@@ -431,7 +437,7 @@ const profile = {
     ],
     awards: [
         {
-            id: 2,
+            id: 1,
             organizationName: "USAID Egypt",
             title: "USAID Scholarship",
             description: "Successfully awarded a scholarship for my bachelor Degree in computer Science with 140 students by the United States Agency for International Development\n(USAID) in collaboration with the American University in Cairo.",
@@ -440,7 +446,7 @@ const profile = {
             date: "2021-09-23"
         },
         {
-            id: 9,
+            id: 2,
             organizationName: "University of Arizona | Scholarship Program",
             title: "Scholarship Recipient – Semester Abroad (Fall 2024, 4.0 GPA)",
             description: "Awarded a scholarship to study abroad at the University of Arizona for the Fall 2024 semester, achieving a 4.0 GPA. Additionally contributed to research initiatives at the College of Engineering.",
@@ -449,7 +455,7 @@ const profile = {
             link: "https://www.linkedin.com/posts/sherif-elglaly_studyabroad-universityofarizona-softwaredevelopment-activity-7296535485491912704-PM5o?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 4,
+            id: 3,
             organizationName: "Ministry of Planning and Economic Development & NIGSD",
             title: "Certified Sustainable Development Trainer",
             description: "Officially certified as a Sustainable Development Trainer for the next two years after intensive training in soft skills, sustainable development, and governance, as part of a Train-the-Trainer program.",
@@ -458,7 +464,7 @@ const profile = {
             link: "https://www.linkedin.com/posts/sherif-elglaly_tot-sustainabledevelopment-sdgs-activity-7227281904629121024-7-mI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 5,
+            id: 4,
             organizationName: "ICPC Mansoura",
             title: "Top 10 – Game of Coders Competition",
             description: "Awarded for achieving a top 10 position in the Game of Coders competitive programming competition, showcasing strong problem-solving skills and teamwork.",
@@ -467,7 +473,7 @@ const profile = {
             link: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK"
         },
         {
-            id: 6,
+            id: 5,
             organizationName: "Hult Prize – Assiut University",
             title: "1st Place – Hult Prize Assiut University",
             description: "Awarded 1st place for a project focused on biofuel production through bacterial fermentation and agricultural waste, showcasing innovation, sustainability, and entrepreneurial spirit.",
@@ -476,7 +482,7 @@ const profile = {
             link: "https://www.linkedin.com/posts/pola-frans_hultprizewinner-biofuelinnovation-assiutuniversity-ugcPost-7171944912186294272-iwpL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 7,
+            id: 6,
             organizationName: "AUC Center for Entrepreneurship and Innovation (CEI)",
             title: "Completion of Entrepreneurship Program & Seed Funding Award",
             description: "Successfully completed an intensive entrepreneurship program at AUC CEI. Pitched the 'NextGen' project, leading to securing $30K in seed funding.",
@@ -485,7 +491,7 @@ const profile = {
             link: "https://www.linkedin.com/posts/sherif-elglaly_entrepreneurship-auc-cei-activity-7298049656280776705-qyvm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 8,
+            id: 7,
             organizationName: "Ministry of Communications | ITIDA | TIEC",
             title: "Top 10 Startup – Pre-Incubation Program 2023",
             description: "Led a team of 4 in developing 'The Green Dream' platform, an innovative web-based solution for responsible waste management. Successfully positioned the project among the top 10 startups selected for the prestigious pre-incubation program organized by ITIDA, TIEC, and the Ministry of Communications.",
@@ -558,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
     profile.projects.forEach(project => {
         const projectItem = document.createElement('li');
         projectItem.className = 'folio-list__item column';
-        projectItem.setAttribute('data-animate-el', '');
+        projectItem.setAttribute('data-animate-el', '');    
         projectItem.innerHTML = `
             <a class="folio-list__item-link" href="#project-${project.id}">
                 <div class="folio-list__item-pic">
@@ -569,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="folio-list__item-title">${project.name}</div>
                 </div>
             </a>
-            <div id="project-${project.id}" hidden>
+            <div id="project-${project.id}|" hidden>
                 <div class="modal-popup">
                     <img src="${project.image}" alt="">
                     <div class="modal-popup__desc">
@@ -582,6 +588,36 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         projectsContainer.appendChild(projectItem);
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Get all project links
+    const projectLinks = document.querySelectorAll('.folio-list__item-link');
+    
+    // Add click event to each project link
+    projectLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectId = this.getAttribute('data-project-id');
+            const modal = document.getElementById(`project-${projectId}`);
+            
+            // Show the modal
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        });
+    });
+
+    // Close modal when clicking close button or outside
+    document.querySelectorAll('.modal-popup').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-popup__close')) {
+                this.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+        });
+    });
+});
 
     // Certificates
     const certificatesContainer = document.getElementById('certificateElement');
@@ -652,21 +688,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const accomplishmentsContainer = document.getElementById('accomplishments-container');
     profile.awards.forEach(award => {
         const awardElement = document.createElement('div');
-        awardElement.className = 'entry column';
+        awardElement.className = 'timeline';
+        awardElement.setAttribute('data-animate-el', '');
         awardElement.innerHTML = `
-            <a class="entry__link glightbox" data-glightbox="title: ${award.title}; description: .desc-${award.id}">
-                <div class="entry__thumb">
-                    <img src="${award.images}" alt="">
-                </div>
-                <div class="entry__info">
-                    <span><a href="${award.link}" target="_blank">More Details</a></span>
-                    <h4 class="entry__title">${award.title}</h4>
-                    <div class="entry__cat">${award.organizationName}</div>
-                    <p class="timeline__timeframe">${award.date}</p>
-                    <div class="entry__cat">${award.description}</div>
-                </div>
-            </a>
-        `;
+    <div class="timeline__block">
+        <div class="timeline__bullet"></div>
+        <div class="timeline__header">
+            ${award.id % 2 !== 0 ? `
+                <img src="${award.images}" alt="${award.title}" class="timeline__image" />
+                 <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-down" />
+            ` : ''}
+            
+            <h4 class="timeline__title">${award.title}</h4>
+            <h5 class="timeline__meta">${award.organizationName}</h5>
+            <p class="timeline__timeframe">${award.date}</p>
+            <p>${award.description}</p>
+            
+            ${award.id % 2 === 0 ? `
+               <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" />
+                <img src="${award.images}" alt="${award.title}" class="timeline__image" />
+            ` : ''}
+            
+            <a href="${award.link}" target="_blank" class="btn btn-primary mt-auto">More Details</a>
+        </div>
+    </div>
+`;
         accomplishmentsContainer.appendChild(awardElement);
     });
 });

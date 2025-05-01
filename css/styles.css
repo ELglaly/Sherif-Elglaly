@@ -3524,6 +3524,51 @@ img.u-pull-left {
     color          : var(--color-text-light);
     margin-top     : -.2rem;
 }
+.timeline__image {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+
+}
+.arrow {
+    width: 0;
+    height: 0;
+    margin: 10px auto;
+    color: var(--color-1); 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid red; /* Change this color! */
+    cursor: pointer;
+    animation: bounce 1s infinite;
+}
+
+.arrow-down {
+    animation: bounce-down 1s infinite;
+    
+}
+.arrow-up {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce-down {
+    0%, 100% {
+        transform: translateY(0) rotate(180deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(180deg);
+    }
+}
 
 /* ------------------------------------------------------------------- 
  * responsive:
