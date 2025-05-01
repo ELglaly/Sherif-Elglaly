@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sherif Elglaly</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/css/styles.css">
+   
+</head>
+
+<body id="top">
+<div id="preloader">
+    <div id="loader"></div>
+</div>
+
+<div class="s-pagewrap">
+    <div class="circles">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <header class="s-header">
+        <div class="header-mobile">
+            <span class="mobile-home-link"><a href="#">Sherif Elglaly</a></span>
+            <a class="mobile-menu-toggle" href="#"><span>Menu</span></a>
+        </div>
+
+        <div class="row wide main-nav-wrap">
+            <nav class="column lg-12 main-nav">
+                <ul>
+                    <li><a href="#" class="home-link">Sherif</a></li>
+                    <li><a href="#education" class="smoothscroll">Education</a></li>
+                    <li><a href="#experience" class="smoothscroll">Experience</a></li>
+                    <li><a href="#accomplishments" class="smoothscroll">Accomplishments</a></li>
+                    <li><a href="#projects" class="smoothscroll">Projects</a></li>
+                   <li>
+                       <div class="dropdown">
+                           <a class="dropdown-btn">More</a>
+                           <div class="dropdown-content">
+                               <a href="#certificate">Certificates</a>
+                               <a href="#skills">Skills</a>
+                               <a href="#recommendation">Recommendation</a>
+                               <a href="#contact">Contacts</a>
+                           </div>
+                       </div>
+                   </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="s-content">
+        <section id="intro" class="s-intro target-section">
+            <div class="row intro-content wide">
+                <div class="column">
+                    <div class="text-pretitle with-line">Hello World</div>
+                    <h1 class="text-huge-title" id="profile-name"></h1>
+                    <h4 id="profile-bio"></h4>
+                </div>
+                <ul class="intro-social">
+                    <li><a id="linkedin-link" href="#" target="_blank">LinkedIn</a></li>
+                    <li><a id="github-link" href="#" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <a href="#about" class="intro-scrolldown smoothscroll">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
+            </a>
+        </section>
+
+        <section id="about" class="s-about target-section">
+            <div class="row about-info wide" data-animate-block>
+                <div class="column lg-6 md-12 about-info__pic-block">
+                    <img src="/images/newyork.JPG" srcset="/images/newyork.JPG 1x, /images/newyork.JPG 2x" alt="" class="about-info__pic" data-animate-el>
+                </div>
+                <div class="column lg-6 md-12">
+                    <div class="about-info__text">
+                        <h2 class="text-pretitle with-line" data-animate-el>About</h2>
+                        <p id="profile-about" class="attention-getter" data-animate-el></p>
+                        <a id="cv-link" href="#" target="_blank" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience&education">
+            <div class="row about-timelines" data-animate-block>
+                <div id="experience" class="column lg-6 tab-12">
+                    <h2 class="text-pretitle with-line" data-animate-el>Experience</h2>
+                    <div class="timeline" data-animate-el id="experience-container"></div>
+                </div>
+                <div id="education" class="column lg-6 tab-12">
+                    <h2 class="text-pretitle with-line" data-animate-el>Education</h2>
+                    <div class="timeline" data-animate-el id="education-container"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accomplishments" class="s-accomplishments target-section">
+            <div class="row contact-top">
+                <div class="column lg-12">
+                    <h2 class="text-pretitle">Accomplishments</h2>
+                    <p class="h1">Things I've built, led, or achieved that I'm proud of.</p>
+                </div>
+            </div>
+            <div class="folio-entries" id="accomplishments-container"></div>
+        </section>
+
+        <section id="projects" class="s-works target-section">
+            <div class="row works-portfolio">
+                <div class="column lg-12" data-animate-block>
+                    <h2 class="text-pretitle" data-animate-el>Recent projects</h2>
+                    <p class="h1" data-animate-el>Here are some of my favorite projects I have done lately. Feel free to check them out.</p>
+                    <ul class="folio-list row block-lg-one-half block-stack-on-1000" id="projects-container"></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificate">
+            <div class="row contact-top">
+                <div class="column lg-12">
+                    <h2 class="text-pretitle">Certificates</h2>
+                    <p class="h1">I'm always learning. Here are some programs I've completed along the way.</p>
+                </div>
+            </div>
+            <div class="row filter-buttons justify-content-center">
+                <div id="filterCertificate" class="col-12 text-center mb-4">
+                    <button class="filter-btn btn active" data-filter="all">All</button>
+                    <button class="filter-btn btn" data-filter="amazon">Amazon</button>
+                    <button class="filter-btn btn" data-filter="meta">Meta</button>
+                    <button class="filter-btn btn" data-filter="aws">AWS</button>
+                    <button class="filter-btn btn" data-filter="other">Other</button>
+                </div>
+            </div>
+            <div id="certificateContent" class="row about-timelines" data-animate-block>
+                <div class="certifications-grid" id="certificateElement"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="row contact-top">
+                <div class="column lg-12">
+                    <h2 class="text-pretitle">Skills</h2>
+                    <p class="h1">Tools and tech I use every day to solve problems and create.</p>
+                </div>
+            </div>
+            <div id="skillsContent" class="row about-timelines" data-animate-block>
+                <div class="certifications-grid" id="skills-container"></div>
+            </div>
+        </section>
+
+        <section id="recommendation">
+            <div class="row contact-top">
+                <div class="column lg-12">
+                    <h2 class="text-pretitle">Recommendation</h2>
+                    <p class="h1">Kind words from people I've worked with and learned from.</p>
+                </div>
+            </div>
+            <div class="row testimonials" style="margin-top: auto">
+                <div class="column lg-12" data-animate-block>
+                    <div class="swiper-container testimonial-slider" data-animate-el>
+                        <div class="swiper-wrapper">
+                            <div class="testimonial-slider__slide swiper-slide">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Diana Saldaña Jiménez</strong>
+                                    <span>Assistant Professor of Practice of the Software Engineering Program at the University of Arizona.</span>
+                                </cite>
+                                <p>Sherif was in my class, SFWE 301 Software Engineering Requirements Analysis and Testing, he demonstrated a high academic performance, always participating and showing skills on problem-solving, teamwork and technical skills as well in coding. I found that he was always ready to work and to push others to do the work they were supposed to do. Also, I noticed that he has great skills and ambitions in the software engineering field. He was in charge to lead his team during the developing of the SRS and implementation as well. I recall that I asked his team permission to share their first draft because they did a very good job.</p>
+                            </div>
+                            <div class="testimonial-slider__slide swiper-slide">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Youssef Abosalem</strong>
+                                    <span>Founder & CEO</span>
+                                    <span>Green Assiut University Initiative</span>
+                                </cite>
+                                <p>His dedication and commitment were further recognized when he was chosen as a mentor for the Sustainable Development Goals (SDGs) Ambassadors Program at Assiut University—the first program of its kind in Upper Egypt. This prestigious role was awarded to him because of his leadership qualities, profound understanding of sustainable development, and his status as a certified trainer by the Ministry of Planning and Economic Development. In this capacity, Sherif mentored several graduation projects, providing constructive feedback and helping students turn their ideas into practical, real-life applications.</p>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="s-contact target-section">
+            <div class="row contact-top">
+                <div class="column lg-12">
+                    <h2 class="text-pretitle">Get In Touch</h2>
+                    <p class="h1">I love to hear from you. Whether you have a question or just want to chat about design, tech & art — shoot me a message.</p>
+                </div>
+            </div>
+            <div class="row contact-bottom">
+                <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+                    <h3 class="text-pretitle">Reach me at</h3>
+                    <p class="contact-links">
+                        <a id="contact-email" href="#" target="_blank" class="mailtoui"></a><br>
+                        <a id="contact-phone" href="#" target="_blank"></a>
+                    </p>
+                </div>
+                <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+                    <h3 class="text-pretitle">Social</h3>
+                    <ul class="contact-links">
+                        <li><a id="linkedin-contact" href="#" target="_blank"><img src="/images/linkedin.svg" width="50" height="50" alt="LinkedIn icon"></a></li>
+                        <li><a id="github-contact" href="#"> target="_blank"<img src="/images/icons8-github.svg" width="50" height="50" alt="GitHub icon"></a></li>
+                    </ul>
+                </div>
+                <div class="column lg-4 md-12 contact-block">
+                    <a id="say-hello" href="#" target="_blank" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="s-footer">
+        <div class="row">
+            <div class="column ss-copyright">
+                <span>© Copyright Sherif Elglaly 2021</span>
+            </div>
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+// Profile Data
+const profile = {
+    name: "Sherif Elglaly",
+    contactEmail: "sherifelglaly@gmail.com",
+    phone: "+201026386402",
+    address: "Cairo, Egypt",
+    githubLink: "https://github.com/ELglaly",
+    linkedinLink: "https://www.linkedin.com/in/sherif-elglaly/",
+    bio: "Senior Software Engineering Student | USAID Scholar",
+    cvLink: "https://drive.google.com/file/d/1fAYtBeMlPgOq1fGOxcNqI4VSxeVBwPjV/view?usp=sharing",
+    about: "My name is Sherif Shawshen. preferred by Sherif Elglaly. I am a senior Software Engineering student at Assiut University, currently ranked fourth in my department, and a USAID Scholar as a recipient of a USAID scholarship for my bachelor's degree.\n\nWhen I first started studying Software Engineering, my goal was to improve my skills in software development and its applications. While this focus helped me do well academically, I've always wanted to learn more beyond what was required in my courses. My experiences during my studies, internships, and exchange program have shaped my skills, aspirations, and desire to continue my education.",
+    skills: [
+        { name: "C#", category: "Programming Languages", level: "Advanced" },
+        { name: "Python", category: "Programming Languages", level: "Intermediate" },
+        { name: "C++", category: "Programming Languages", level: "Intermediate" },
+        { name: "Java", category: "Programming Languages", level: "Advanced" },
+        { name: "R", category: "Programming Languages", level: "Beginner" },
+        { name: "Git", category: "Version Control", level: "Advanced" },
+        { name: "Design Patterns", category: "Development Principles", level: "Intermediate" },
+        { name: "SOLID Principles", category: "Development Principles", level: "Intermediate" },
+        { name: "Data Structures & Algorithms", category: "Development Principles", level: "Advanced" },
+        { name: "OOP", category: "Development Principles", level: "Advanced" },
+        { name: "Agile", category: "Development Principles", level: "Intermediate" },
+        { name: "ASP.NET", category: "Web Development", level: "Advanced" },
+        { name: "HTML", category: "Web Development", level: "Advanced" },
+        { name: "CSS", category: "Web Development", level: "Advanced" },
+        { name: "Bootstrap", category: "Web Development", level: "Intermediate" },
+        { name: "JSON", category: "Web Development", level: "Advanced" },
+        { name: "AJAX", category: "Web Development", level: "Intermediate" },
+        { name: "Spring Boot", category: "Web Development", level: "Advanced" },
+        { name: "Spring Security", category: "Web Development", level: "Intermediate" },
+        { name: "Spring Data", category: "Web Development", level: "Intermediate" },
+        { name: ".NET", category: "Desktop Development", level: "Advanced" },
+        { name: "JavaFX", category: "Desktop Development", level: "Intermediate" },
+        { name: "Arabic", category: "Languages", level: "Native" },
+        { name: "English", category: "Languages", level: "Fluent" },
+        { name: "JUnit 5", category: "Testing", level: "Intermediate" },
+        { name: "Mockito", category: "Testing", level: "Intermediate" },
+        { name: "MySQL", category: "Database", level: "Advanced" },
+        { name: "SQL Server", category: "Database", level: "Intermediate" }
+    ],
+    education: [
+        {
+            institutionName: "University of Arizona",
+            degree: "Non-Degree Seeking, Computer Science",
+            location: "Tucson, Arizona, USA",
+            startDate: "Aug 2024",
+            endDate: "Present",
+            grade: "4.00",
+            description: "During my time as an exchange student at the University of Arizona, I've had the opportunity to dive into advanced coursework and develop a strong foundation in key areas of Computer Science. I'm proud to have earned a perfect GPA of 4.0."
+        },
+        {
+            institutionName: "Assiut University",
+            degree: "Bachelor's degree, Computer Software Engineering",
+            location: "Assiut, Egypt",
+            startDate: "Sep 2021",
+            endDate: "Expected Jun 2025",
+            grade: "3.59",
+            description: "𝘼𝙘𝙖𝙙𝙚𝙢𝙞𝙘 𝘼𝙘𝙝𝙞𝙚𝙫𝙚𝙢𝙚𝙣𝙩: securing fourth place in the Software Engineering department"
+        },
+        {
+            institutionName: "AUC - School of Continuing Education",
+            degree: "Vocational Program, English Language",
+            location: "Cairo, Egypt",
+            startDate: "Nov 2021",
+            endDate: "April 2024",
+            grade: "Completed with 93%",
+            description: "I completed a Vocational Program in English Language at the American University in Cairo's School of Continuing Education. This program helped me improve my English communication skills, both in speaking and writing. It gave me the confidence to express my ideas clearly and work effectively in teams, which has been really helpful in both my studies and any professional settings."
+        }
+    ],
+    experiences: [
+        {
+            companyName: "Wavemakers United",
+            position: "Software Engineer (Part-time)",
+            startDate: "Mar 2024",
+            endDate: "Jul 2024",
+            description: "I was part of a three-member team developing the company's Educational Platform. My main responsibilities included:\n\n1. 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁 𝗚𝗮𝘁𝗵𝗲𝗿𝗶𝗻𝗴: Collaborated with the team to collect, analyze, and document system requirements, ensuring they matched the platform's goals and user needs.\n2. SRS Documentation: Created a detailed Software Requirements Specification (SRS), covering:\n   • Functional Requirements: User authentication, course management, and reporting.\n   • Non-Functional Requirements: Performance, scalability, and security.\n3. System Design: Assisted in designing the system architecture, defining components, their interactions, and data flow.\n\nSkills: Sustainable Development Goals (SDG), Software Development, Requirements Analysis, System Design, Documentation"
+        },
+        {
+            companyName: "ALMOSTAKBAL TECHNOLOGY",
+            position: "Software Engineer Intern",
+            startDate: "Sep 2023",
+            endDate: "Oct 2023",
+            description: "I worked with senior developers to build and optimize key features of the platform, focusing on performance and scalability. This included improving how the platform handled large amounts of data while keeping it fast and reliable.\n\nI also talked directly with customers to understand their needs and challenges. By listening to their feedback, I helped create solutions that worked for them. I followed up to make improvements, ensuring the final product met their expectations and was easy to use.\n\nSkills: Dart, Mobile Applications, Customer Engagement, Performance Optimization, Scalability"
+        }
+    ],
+    projects: [
+        {
+            id: 1,
+            name: "E-commerce Platform",
+            description: "A robust and scalable e-commerce platform built with Spring Boot. This system enables users to browse products, manage their shopping cart, and complete secure purchases. It includes an admin panel for managing products, orders, and users. Designed with modern best practices, this project is ideal for businesses looking to establish or expand their online presence.",
+            link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
+            image: "/images/icons8-github.svg",
+            technologiesUsed: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "JavaMailSender", "MySQL", "H2 Database (Testing)", "Stripe/PayPal APIs", "React", "HTML", "CSS", "JavaScript", "Redis", "🧪 Tested with JUnit 5 & Mockito", " 🔐 JWT-based"]
+        },
+        {
+            id: 2,
+            name: "Lexical Analyzer & Arabic Language Parser",
+            description: "This project implements a Lexical Analyzer and Parser for a custom programming language that supports Arabic keywords. It features tokenization and syntactic analysis capabilities to build an Abstract Syntax Tree (AST) for source code interpretation.",
+            link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
+            image:"images/icons8-github.svg",
+            technologiesUsed: ["C#", ".NET Core", "ASP.NET", "Visual Studio Code", "HTML", "CSS"]
+        },
+        {
+            id: 3,
+            name: "AI-Powered Learning Roadmap Generator",
+            description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
+            link: "https://github.com/ELglaly/Roadmap-Makerr",
+            image: "/images/icons8-github.svg",
+            technologiesUsed: ["Java 23", "Spring Boot 3.4.3", "Spring Security with JWT", "Spring WebSocket", "Spring Data JPA", "Spring AI OpenAI", "Google Cloud AI Platform", "MySQL", "Redis 7.4.2", "Maven 3.9.9", "Lombok", "MapStruct", "JUnit 5"]
+        }
+    ],
+    certifications: [
+        {
+            institutionName: "Amazon",
+            certificateName: "Data Structures and Algorithms",
+            certificateLink: "https://www.credly.com/badges/RCBDCRYZ5XES",
+            date: "Apr 2025",
+            description: "Skills: Data Structures, Algorithms, JUnit, Unit Testing, Software Testing, Debugging, Searching Algorithms (Linear Search, Binary Search), Sorting Algorithms (Bubble Sort, Insertion Sort, Merge Sort, Quick Sort), Java Collections (ArrayList, LinkedList, Stack, Queue, Map), Test Driven Development (TDD)"
+        },
+        {
+            institutionName: "Amazon",
+            certificateName: "Full Stack Web Development",
+            certificateLink: "https://www.credly.com/badges/0of9pn6zn4en",
+            date: "Issued Feb 2025",
+            description: "Credential ID 0OF9PN6ZN4EN\nSkills: Java Development · Amazon Web Services (AWS)"
+        },
+        {
+            institutionName: "Amazon",
+            certificateName: "Introduction to Software Development",
+            certificateLink: "https://www.credly.com/badges/ajck66x9vsxj",
+            date: "Issued Jan 2025",
+            description: "Credential ID AJCK66X9VSXJ\nSkills: Object-Oriented Programming (OOP)"
+        },
+        {
+            institutionName: "Meta",
+            certificateName: "Database Structures and Management with MySQL",
+            certificateLink: "https://www.coursera.org/verify/XYZ123",
+            date: "Issued Jul 2024",
+            description: "Skills: Database Management System (DBMS) · SQL · Database Design"
+        },
+        {
+            institutionName: "Meta",
+            certificateName: "Introduction to Databases",
+            certificateLink: "https://www.coursera.org/verify/ABC456",
+            date: "Issued Jun 2024",
+            description: "Skills: SQL · Databases · Database Management System (DBMS) · ERD"
+        },
+        {
+            institutionName: "Ministry of Planning, Economic Development & International Cooperation",
+            certificateName: "Sustainable Development Trainee",
+            certificateLink: "#",
+            date: "Issued Jun 2024 · Expires Jun 2026",
+            description: "Skills: Sustainable Development Goals (SDG) · Team Collaboration · Public Speaking · Presentation Skills"
+        },
+        {
+            institutionName: "Duolingo English Test",
+            certificateName: "English Proficiency Certificate",
+            certificateLink: "https://www.duolingo.com/certificates/XYZ789",
+            date: "Issued Mar 2024 · Expires Mar 2026",
+            description: "English language proficiency certification"
+        },
+        {
+            institutionName: "ICPC Mansoura",
+            certificateName: "Game of Coders",
+            certificateLink: "#",
+            date: "Issued Jul 2023",
+            description: "Skills: Competitive Programming · Teamwork · Problem Solving · Time Management"
+        },
+        {
+            institutionName: "365 Data Science",
+            certificateName: "Introduction to Data and Data Science",
+            certificateLink: "https://learn.365datascience.com/certificates/CC-00F8691301",
+            date: "Issued May 2023",
+            description: "Credential ID CC-00F8691301"
+        },
+        {
+            institutionName: "The American University in Cairo",
+            certificateName: "Research and Creativity Convention (EURECA)",
+            certificateLink: "#",
+            date: "Issued Feb 2024 · Expired Feb 2024",
+            description: "Participation in research convention"
+        },
+        {
+            institutionName: "Amazon Web Services (AWS)",
+            certificateName: "AWS Academy Introduction to Cloud Semester 1",
+            certificateLink: "https://www.credly.com/badges/XYZ123",
+            date: "Issued Sep 2022 · Expired Dec 2023",
+            description: "Skills: Amazon Web Services (AWS) · Cloud Computing"
+        },
+        {
+            institutionName: "Meta",
+            certificateName: "Introduction to Databases",
+            certificateLink: "https://www.coursera.org/verify/ABC456",
+            date: "Issued Jun 2024",
+            description: "Skills: SQL · Databases · Database Management System (DBMS) · ERD"
+        }
+    ],
+    awards: [
+        {
+            id: 2,
+            organizationName: "USAID Egypt",
+            title: "USAID Scholarship",
+            description: "Successfully awarded a scholarship for my bachelor Degree in computer Science with 140 students by the United States Agency for International Development\n(USAID) in collaboration with the American University in Cairo.",
+            images: "images/accomplishments/usaid2.jpg",
+            link: "#",
+            date: "2021-09-23"
+        },
+        {
+            id: 9,
+            organizationName: "University of Arizona | Scholarship Program",
+            title: "Scholarship Recipient – Semester Abroad (Fall 2024, 4.0 GPA)",
+            description: "Awarded a scholarship to study abroad at the University of Arizona for the Fall 2024 semester, achieving a 4.0 GPA. Additionally contributed to research initiatives at the College of Engineering.",
+            images: "images/accomplishments/uofajpeg.jpeg",
+            date: "2024-8-20 : 2024-12-21",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_studyabroad-universityofarizona-softwaredevelopment-activity-7296535485491912704-PM5o?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 4,
+            organizationName: "Ministry of Planning and Economic Development & NIGSD",
+            title: "Certified Sustainable Development Trainer",
+            description: "Officially certified as a Sustainable Development Trainer for the next two years after intensive training in soft skills, sustainable development, and governance, as part of a Train-the-Trainer program.",
+            images: "images/accomplishments/tottraining.jpeg",
+            date: "2023-10-25",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_tot-sustainabledevelopment-sdgs-activity-7227281904629121024-7-mI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 5,
+            organizationName: "ICPC Mansoura",
+            title: "Top 10 – Game of Coders Competition",
+            description: "Awarded for achieving a top 10 position in the Game of Coders competitive programming competition, showcasing strong problem-solving skills and teamwork.",
+            images: "images/accomplishments/gameofcoder.jpeg",
+            date: "2023-07-26",
+            link: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK"
+        },
+        {
+            id: 6,
+            organizationName: "Hult Prize – Assiut University",
+            title: "1st Place – Hult Prize Assiut University",
+            description: "Awarded 1st place for a project focused on biofuel production through bacterial fermentation and agricultural waste, showcasing innovation, sustainability, and entrepreneurial spirit.",
+            images: "images/accomplishments/hult_prize.jpeg",
+            date: "2024-03-01",
+            link: "https://www.linkedin.com/posts/pola-frans_hultprizewinner-biofuelinnovation-assiutuniversity-ugcPost-7171944912186294272-iwpL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 7,
+            organizationName: "AUC Center for Entrepreneurship and Innovation (CEI)",
+            title: "Completion of Entrepreneurship Program & Seed Funding Award",
+            description: "Successfully completed an intensive entrepreneurship program at AUC CEI. Pitched the 'NextGen' project, leading to securing $30K in seed funding.",
+            images: "images/accomplishments/CEI.jpeg",
+            date: "2024-02-01",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_entrepreneurship-auc-cei-activity-7298049656280776705-qyvm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 8,
+            organizationName: "Ministry of Communications | ITIDA | TIEC",
+            title: "Top 10 Startup – Pre-Incubation Program 2023",
+            description: "Led a team of 4 in developing 'The Green Dream' platform, an innovative web-based solution for responsible waste management. Successfully positioned the project among the top 10 startups selected for the prestigious pre-incubation program organized by ITIDA, TIEC, and the Ministry of Communications.",
+            images: "images/accomplishments/green_dream_project.jpeg",
+            date: "2023-11-01",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_itida-tiec-ministryofcommunications-activity-7134283303720824832-zFXQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        }
+    ]
+};
+
+// DOM Content Loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Basic Profile Info
+    document.getElementById('profile-name').textContent = `I am ${profile.name}`;
+    document.getElementById('profile-bio').textContent = profile.bio;
+    document.getElementById('profile-about').textContent = profile.about;
+    document.getElementById('cv-link').href = profile.cvLink;
+    document.getElementById('linkedin-link').href = profile.linkedinLink;
+    document.getElementById('github-link').href = profile.githubLink;
+    document.getElementById('contact-email').href = `mailto:${profile.contactEmail}`;
+    document.getElementById('contact-email').textContent = profile.contactEmail;
+    document.getElementById('contact-phone').href = `tel:${profile.phone}`;
+    document.getElementById('contact-phone').textContent = profile.phone;
+    document.getElementById('linkedin-contact').href = profile.linkedinLink;
+    document.getElementById('github-contact').href = profile.githubLink;
+    document.getElementById('say-hello').href = `mailto:${profile.contactEmail}`;
+
+    // Education
+    const educationContainer = document.getElementById('education-container');
+    profile.education.forEach(edu => {
+        const eduBlock = document.createElement('div');
+        eduBlock.className = 'timeline__block';
+        eduBlock.innerHTML = `
+            <div class="timeline__bullet"></div>
+            <div class="timeline__header">
+                <h4 class="timeline__title">${edu.institutionName}</h4>
+                <h4 class="timeline__meta">${edu.location}</h4>
+                <h5 class="timeline__meta">${edu.degree}</h5>
+                <p class="timeline__timeframe">${edu.startDate} - ${edu.endDate}</p>
+                <p class="timeline__timeframe">GPA: ${edu.grade}</p>
+            </div>
+            <div class="timeline__desc">
+                <p>${edu.description}</p>
+            </div>
+        `;
+        educationContainer.appendChild(eduBlock);
+    });
+
+    // Experience
+    const experienceContainer = document.getElementById('experience-container');
+    profile.experiences.forEach(exp => {
+        const expBlock = document.createElement('div');
+        expBlock.className = 'timeline__block';
+        expBlock.innerHTML = `
+            <div class="timeline__bullet"></div>
+            <div class="timeline__header">
+                <h4 class="timeline__title">${exp.companyName}</h4>
+                <h5 class="timeline__meta">${exp.position}</h5>
+                <p class="timeline__timeframe">${exp.startDate} - ${exp.endDate}</p>
+            </div>
+            <div class="timeline__desc">
+                <p>${exp.description.replace(/\n/g, '<br>')}</p>
+            </div>
+        `;
+        experienceContainer.appendChild(expBlock);
+    });
+
+    // Projects
+    const projectsContainer = document.getElementById('projects-container');
+    profile.projects.forEach(project => {
+        const projectItem = document.createElement('li');
+        projectItem.className = 'folio-list__item column';
+        projectItem.setAttribute('data-animate-el', '');
+        projectItem.innerHTML = `
+            <a class="folio-list__item-link" href="#project-${project.id}">
+                <div class="folio-list__item-pic">
+                    <img src="${project.image}" srcset="${project.image} 1x, ${project.image.replace('.svg', '@2x.svg')} 2x" alt="">
+                </div>
+                <div class="folio-list__item-text">
+                    <div class="folio-list__item-cat">Website</div>
+                    <div class="folio-list__item-title">${project.name}</div>
+                </div>
+            </a>
+            <div id="project-${project.id}" hidden>
+                <div class="modal-popup">
+                    <img src="${project.image}" alt="">
+                    <div class="modal-popup__desc">
+                        <h5>${project.name}</h5>
+                        <p>${project.description}</p>
+                    </div>
+                    <a href="${project.link}" target="_blank" class="btn btn-primary mt-auto">GitHub link</a>
+                </div>
+            </div>
+        `;
+        projectsContainer.appendChild(projectItem);
+    });
+
+    // Certificates
+    const certificatesContainer = document.getElementById('certificateElement');
+    profile.certifications.forEach(cert => {
+        const certElement = document.createElement('div');
+        certElement.setAttribute('data-institution', cert.institutionName.toLowerCase());
+        certElement.innerHTML = `
+            <div class="timeline" data-animate-el>
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h4 class="timeline__title">${cert.certificateName}</h4>
+                        <h5 class="timeline__meta">${cert.institutionName}</h5>
+                        <p class="timeline__timeframe">${cert.date}</p>
+                        <a href="${cert.certificateLink}" target="_blank" class="btn btn-primary mt-auto"
+                        >View Certificate</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        certificatesContainer.appendChild(certElement);
+    });
+
+    // Certificate Filtering
+    document.querySelectorAll('#filterCertificate .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('#filterCertificate .filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            document.querySelectorAll('#certificateElement > div').forEach(cert => {
+                if (filter === 'all' || cert.dataset.institution.includes(filter)) {
+                    cert.style.display = 'block';
+                } else {
+                    cert.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    // Skills
+    const skillsContainer = document.getElementById('skills-container');
+    const skillsByCategory = profile.skills.reduce((acc, skill) => {
+        if (!acc[skill.category]) acc[skill.category] = [];
+        acc[skill.category].push(skill);
+        return acc;
+    }, {});
+
+    Object.entries(skillsByCategory).forEach(([category, skills]) => {
+        const skillBlock = document.createElement('div');
+        skillBlock.className = 'timeline';
+        skillBlock.setAttribute('data-animate-el', '');
+        skillBlock.innerHTML = `
+            <div class="timeline__block">
+                <div class="timeline__bullet"></div>
+                <div class="timeline__header">
+                    <h4 class="timeline__title">${category}</h4>
+                    <ul>
+                        ${skills.map(skill => `<li>${skill.name} <span class="skill-level ${skill.level.toLowerCase()}">(${skill.level})</span></li>`).join('')}
+                    </ul>
+                </div>
+            </div>
+        `;
+        skillsContainer.appendChild(skillBlock);
+    });
+
+    // Accomplishments
+    const accomplishmentsContainer = document.getElementById('accomplishments-container');
+    profile.awards.forEach(award => {
+        const awardElement = document.createElement('div');
+        awardElement.className = 'entry column';
+        awardElement.innerHTML = `
+            <a class="entry__link glightbox" data-glightbox="title: ${award.title}; description: .desc-${award.id}">
+                <div class="entry__thumb">
+                    <img src="${award.images}" alt="">
+                </div>
+                <div class="entry__info">
+                    <span><a href="${award.link}" target="_blank">More Details</a></span>
+                    <h4 class="entry__title">${award.title}</h4>
+                    <div class="entry__cat">${award.organizationName}</div>
+                    <p class="timeline__timeframe">${award.date}</p>
+                    <div class="entry__cat">${award.description}</div>
+                </div>
+            </a>
+        `;
+        accomplishmentsContainer.appendChild(awardElement);
+    });
+});
+
+// Load external JS files
+document.addEventListener('DOMContentLoaded', function() {
+    const script1 = document.createElement('script');
+    script1.src = '/js/plugins.js';
+    document.body.appendChild(script1);
+    
+    const script2 = document.createElement('script');
+    script2.src = '/js/main.js';
+    document.body.appendChild(script2);
+});
+</script>
+</body>
+</html>
