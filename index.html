@@ -76,10 +76,10 @@
         <section id="about" class="s-about target-section">
             <div class="row about-info wide" data-animate-block>
                 <div class="column lg-6 md-12 about-info__pic-block">
-                    <img src="images/newyork.JPG" srcset="images/newyork.JPG 1x, images/newyork.JPG 2x" alt="" class="about-info__pic" data-animate-el>
+                    <img src="images/newyork.JPG" srcset="images/newyork.JPG 1x, images/newyork.JPG 2x" alt="" class="about-info__pic" loading="lazy" data-animate-el>
                 </div>
                 <div class="column lg-6 md-12">
-                    <div class="about-info__text">
+                    <div class="about-info__text" >
                         <h2 class="text-pretitle with-line" data-animate-el>About</h2>
                         <p id="profile-about" class="attention-getter" data-animate-el></p>
                         <a id="cv-link" href="#" target="_blank" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
@@ -211,8 +211,8 @@
                 <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
                     <h3 class="text-pretitle">Social</h3>
                     <ul class="contact-links">
-                        <li><a id="linkedin-contact" href="#" target="_blank"><img src="images/linkedin.svg" width="50" height="50" alt="LinkedIn icon"></a></li>
-                        <li><a id="github-contact" href="#" target="_blank"> <img src="images/icons/github.svg" width="50" height="50" alt="GitHub icon"></a></li>
+                        <li><a id="linkedin-contact" href="#" target="_blank"><img src="images/linkedin.svg" width="50" height="50" loading="lazy" alt="LinkedIn icon"></a></li>
+                        <li><a id="github-contact" href="#" target="_blank"> <img src="images/icons/github.svg" width="50" height="50" loading="lazy" alt="GitHub icon"></a></li>
                     </ul>
                 </div>
                 <div class="column lg-4 md-12 contact-block">
@@ -247,7 +247,12 @@ const profile = {
     linkedinLink: "https://www.linkedin.com/in/sherif-elglaly/",
     bio: "Senior Software Engineering Student | USAID Scholar",
     cvLink: "https://drive.google.com/file/d/1fAYtBeMlPgOq1fGOxcNqI4VSxeVBwPjV/view?usp=sharing",
-    about: "My name is Sherif Shawshen. preferred by Sherif Elglaly. I am a senior Software Engineering student at Assiut University, currently ranked fourth in my department, and a USAID Scholar as a recipient of a USAID scholarship for my bachelor's degree.\n\nWhen I first started studying Software Engineering, my goal was to improve my skills in software development and its applications. While this focus helped me do well academically, I've always wanted to learn more beyond what was required in my courses. My experiences during my studies, internships, and exchange program have shaped my skills, aspirations, and desire to continue my education.",
+    about: "My name is Sherif Shawshen. preferred by Sherif Elglaly. " +
+        "I am a senior Software Engineering student at Assiut University," +
+        " currently ranked fourth in my department, and a USAID Scholar as a recipient " +
+        "of a USAID scholarship for my bachelor's degree.\n\nWhen I first started studying " +
+        "Software Engineering, my goal was to improve my skills in software development and its " +
+        "applications. While this focus helped me do well academically, I've always wanted to learn more beyond what was required in my courses. My experiences during my studies, internships, and exchange program have shaped my skills, aspirations, and desire to continue my education.",
     skills: [
         { name: "C#", category: "Programming Languages", level: "Advanced" },
         { name: "Python", category: "Programming Languages", level: "Intermediate" },
@@ -255,11 +260,11 @@ const profile = {
         { name: "Java", category: "Programming Languages", level: "Advanced" },
         { name: "R", category: "Programming Languages", level: "Beginner" },
         { name: "Git", category: "Version Control", level: "Advanced" },
-        { name: "Design Patterns", category: "Development Principles", level: "Intermediate" },
-        { name: "SOLID Principles", category: "Development Principles", level: "Intermediate" },
+        { name: "Design Patterns", category: "Development Principles", level: "Advanced" },
+        { name: "SOLID Principles", category: "Development Principles", level: "Advanced" },
         { name: "Data Structures & Algorithms", category: "Development Principles", level: "Advanced" },
         { name: "OOP", category: "Development Principles", level: "Advanced" },
-        { name: "Agile", category: "Development Principles", level: "Intermediate" },
+        { name: "Agile", category: "Development Principles", level: "Advanced" },
         { name: "ASP.NET", category: "Web Development", level: "Advanced" },
         { name: "HTML", category: "Web Development", level: "Advanced" },
         { name: "CSS", category: "Web Development", level: "Advanced" },
@@ -267,16 +272,16 @@ const profile = {
         { name: "JSON", category: "Web Development", level: "Advanced" },
         { name: "AJAX", category: "Web Development", level: "Intermediate" },
         { name: "Spring Boot", category: "Web Development", level: "Advanced" },
-        { name: "Spring Security", category: "Web Development", level: "Intermediate" },
-        { name: "Spring Data", category: "Web Development", level: "Intermediate" },
+        { name: "Spring Security", category: "Web Development", level: "Advanced" },
+        { name: "Spring Data", category: "Web Development", level: "Advanced" },
         { name: ".NET", category: "Desktop Development", level: "Advanced" },
-        { name: "JavaFX", category: "Desktop Development", level: "Intermediate" },
+        { name: "JavaFX", category: "Desktop Development", level: "Advanced" },
         { name: "Arabic", category: "Languages", level: "Native" },
         { name: "English", category: "Languages", level: "Fluent" },
         { name: "JUnit 5", category: "Testing", level: "Intermediate" },
         { name: "Mockito", category: "Testing", level: "Intermediate" },
         { name: "MySQL", category: "Database", level: "Advanced" },
-        { name: "SQL Server", category: "Database", level: "Intermediate" }
+        { name: "SQL Server", category: "Database", level: "Advanced" }
     ],
     education: [
         {
@@ -326,6 +331,14 @@ const profile = {
     projects: [
         {
             id: 1,
+            name: "AI-Powered Learning Roadmap Generator",
+            description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
+            link: "https://github.com/ELglaly/Roadmap-Maker",
+            image: "images/icons/github.svg",
+            technologiesUsed: ["Java 23", "Spring Boot 3.4.3", "Spring Security with JWT", "Spring WebSocket", "Spring Data JPA", "Spring AI OpenAI", "Google Cloud AI Platform", "MySQL", "Redis 7.4.2", "Maven 3.9.9", "Lombok", "MapStruct", "JUnit 5"]
+        },
+        {
+            id: 2,
             name: "E-commerce Platform",
             description: "A robust and scalable e-commerce platform built with Spring Boot. This system enables users to browse products, manage their shopping cart, and complete secure purchases. It includes an admin panel for managing products, orders, and users. Designed with modern best practices, this project is ideal for businesses looking to establish or expand their online presence.",
             link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
@@ -333,21 +346,23 @@ const profile = {
             technologiesUsed: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "JavaMailSender", "MySQL", "H2 Database (Testing)", "Stripe/PayPal APIs", "React", "HTML", "CSS", "JavaScript", "Redis", "🧪 Tested with JUnit 5 & Mockito", " 🔐 JWT-based"]
         },
         {
-            id: 2,
-            name: "Lexical Analyzer & Arabic Language Parser",
+            id: 3,
+            name: "Arabic Compiler",
             description: "This project implements a Lexical Analyzer and Parser for a custom programming language that supports Arabic keywords. It features tokenization and syntactic analysis capabilities to build an Abstract Syntax Tree (AST) for source code interpretation.",
             link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
             image:"images/icons/github.svg",
             technologiesUsed: ["C#", ".NET Core", "ASP.NET", "Visual Studio Code", "HTML", "CSS"]
         },
         {
-            id: 3,
-            name: "AI-Powered Learning Roadmap Generator",
-            description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
-            link: "https://github.com/ELglaly/Roadmap-Makerr",
-            image: "images/icons/github.svg",
-            technologiesUsed: ["Java 23", "Spring Boot 3.4.3", "Spring Security with JWT", "Spring WebSocket", "Spring Data JPA", "Spring AI OpenAI", "Google Cloud AI Platform", "MySQL", "Redis 7.4.2", "Maven 3.9.9", "Lombok", "MapStruct", "JUnit 5"]
+            "id": 4,
+            "name": "Pharmacy Management System Frontend",
+            "description": "A comprehensive frontend for a Pharmacy Management System (PMS) designed to streamline pharmacy operations. It supports prescription management, inventory control, sales and billing, reporting, and user management with secure authentication. The system enhances efficiency, accuracy, and customer service while ensuring regulatory compliance.",
+            "link": "https://github.com/ELglaly/Pharmacy-Frontend",
+            "image": "images/icons/pharmacy.svg",
+            "technologiesUsed": ["Java", "JavaFX", "MySQL", "H2 Database", "SRS", "UML", "Test Driven Development (TDD)",
+                "Java Collections", "JavaFX CSS", "JavaFX Scene Builder"]
         }
+
     ],
     certifications: [
         {
@@ -374,23 +389,16 @@ const profile = {
         {
             institutionName: "Meta",
             certificateName: "Database Structures and Management with MySQL",
-            certificateLink: "https://www.coursera.org/verify/XYZ123",
+            certificateLink: "https://coursera.org/share/64a78a22c2d4fa3a08bf3988f66b3ca6",
             date: "Issued Jul 2024",
             description: "Skills: Database Management System (DBMS) · SQL · Database Design"
         },
         {
             institutionName: "Meta",
             certificateName: "Introduction to Databases",
-            certificateLink: "https://www.coursera.org/verify/ABC456",
+            certificateLink: "https://coursera.org/share/bc3473115e683fe0fb7362e474542e51",
             date: "Issued Jun 2024",
             description: "Skills: SQL · Databases · Database Management System (DBMS) · ERD"
-        },
-        {
-            institutionName: "Ministry of Planning, Economic Development & International Cooperation",
-            certificateName: "Sustainable Development Trainee",
-            certificateLink: "#",
-            date: "Issued Jun 2024 · Expires Jun 2026",
-            description: "Skills: Sustainable Development Goals (SDG) · Team Collaboration · Public Speaking · Presentation Skills"
         },
         {
             institutionName: "Duolingo English Test",
@@ -402,7 +410,7 @@ const profile = {
         {
             institutionName: "ICPC Mansoura",
             certificateName: "Game of Coders",
-            certificateLink: "#",
+            certificateLink: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK",
             date: "Issued Jul 2023",
             description: "Skills: Competitive Programming · Teamwork · Problem Solving · Time Management"
         },
@@ -416,14 +424,14 @@ const profile = {
         {
             institutionName: "The American University in Cairo",
             certificateName: "Research and Creativity Convention (EURECA)",
-            certificateLink: "#",
+            certificateLink: "https://www.linkedin.com/posts/sherif-elglaly_eurecaconference-research-creativity-activity-7169674281201741824-nZWa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA",
             date: "Issued Feb 2024 · Expired Feb 2024",
             description: "Participation in research convention"
         },
         {
             institutionName: "Amazon Web Services (AWS)",
             certificateName: "AWS Academy Introduction to Cloud Semester 1",
-            certificateLink: "https://www.credly.com/badges/XYZ123",
+            certificateLink: "https://drive.google.com/file/d/1K_TfdHqTh-Hwf1siZwS8F5VhAVJAVEEA/view",
             date: "Issued Sep 2022 · Expired Dec 2023",
             description: "Skills: Amazon Web Services (AWS) · Cloud Computing"
         },
@@ -492,7 +500,7 @@ const profile = {
         },
         {
             id: 7,
-            organizationName: "Ministry of Communications | ITIDA | TIEC",
+            organizationName: "Ministry of Communications | ITIDA",
             title: "Top 10 Startup – Pre-Incubation Program 2023",
             description: "Led a team of 4 in developing 'The Green Dream' platform, an innovative web-based solution for responsible waste management. Successfully positioned the project among the top 10 startups selected for the prestigious pre-incubation program organized by ITIDA, TIEC, and the Ministry of Communications.",
             images: "images/accomplishments/green_dream_project.jpeg",
@@ -568,7 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
         projectItem.innerHTML = `
             <a class="folio-list__item-link" href="#project-${project.id}">
                 <div class="folio-list__item-pic">
-                    <img src="${project.image}" srcset="${project.image} 1x, ${project.image.replace('.svg', '@2x.svg')} 2x" alt="">
+                    <img src="${project.image}" srcset="${project.image} 1x, ${project.image.replace('.svg', '@2x.svg')} 2x" alt="" loading="lazy">
                 </div>
                 <div class="folio-list__item-text">
                     <div class="folio-list__item-cat">Website</div>
@@ -577,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
             <div id="project-${project.id}|" hidden>
                 <div class="modal-popup">
-                    <img src="${project.image}" alt="">
+                    <img src="${project.image}" alt="" loading="lazy">
                     <div class="modal-popup__desc">
                         <h5>${project.name}</h5>
                         <p>${project.description}</p>
@@ -695,8 +703,8 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="timeline__bullet"></div>
         <div class="timeline__header">
             ${award.id % 2 !== 0 ? `
-                <img src="${award.images}" alt="${award.title}" class="timeline__image" />
-                 <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-down" />
+                <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
+                 <img src="images/icons/arrow.png" alt="${award.title}" loading="lazy" class="arrow-down" />
             ` : ''}
             
             <h4 class="timeline__title">${award.title}</h4>
@@ -705,8 +713,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>${award.description}</p>
             
             ${award.id % 2 === 0 ? `
-               <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" />
-                <img src="${award.images}" alt="${award.title}" class="timeline__image" />
+               <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" loading="lazy" />
+                <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
             ` : ''}
             
             <a href="${award.link}" target="_blank" class="btn btn-primary mt-auto">More Details</a>
