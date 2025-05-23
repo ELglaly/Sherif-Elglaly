@@ -160,7 +160,7 @@ const profile = {
             type: "Desktop Application",
             description: "A comprehensive frontend for a Pharmacy Management System (PMS) designed to streamline pharmacy operations. It supports prescription management, inventory control, sales and billing, reporting, and user management with secure authentication. The system enhances efficiency, accuracy, and customer service while ensuring regulatory compliance.",
             link: "https://github.com/ELglaly/Pharmacy-Frontend",
-            image: "images/icons/pharmacy.svg",
+            image: "images/PharmacyLogo.png",
             technologiesUsed : [
                 "☕ Java",
                 "🖼️ JavaFX",
