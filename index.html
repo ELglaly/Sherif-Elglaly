@@ -332,38 +332,90 @@ const profile = {
         {
             id: 1,
             name: "AI-Powered Learning Roadmap Generator",
+            type: "Rest API",
             description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
             link: "https://github.com/ELglaly/Roadmap-Maker",
             image: "images/icons/github.svg",
-            technologiesUsed: ["Java 23", "Spring Boot 3.4.3", "Spring Security with JWT", "Spring WebSocket", "Spring Data JPA", "Spring AI OpenAI", "Google Cloud AI Platform", "MySQL", "Redis 7.4.2", "Maven 3.9.9", "Lombok", "MapStruct", "JUnit 5"]
+            technologiesUsed: [
+                "☕ Java 23",
+                "🌱 Spring Boot 3.4.3",
+                "🔐 Spring Security with JWT",
+                "🔄 Spring WebSocket",
+                "🗂️ Spring Data JPA",
+                "🧠 Spring AI OpenAI",
+                "☁️ Google Cloud AI Platform",
+                "🛢️ MySQL",
+                "⚡ Redis 7.4.2",
+                "📦 Maven 3.9.9",
+                "🏷️ Lombok",
+                "🧩 MapStruct",
+                "🧪 JUnit 5"
+            ]
         },
         {
             id: 2,
             name: "E-commerce Platform",
+            type: "Rest API",
             description: "A robust and scalable e-commerce platform built with Spring Boot. This system enables users to browse products, manage their shopping cart, and complete secure purchases. It includes an admin panel for managing products, orders, and users. Designed with modern best practices, this project is ideal for businesses looking to establish or expand their online presence.",
             link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
             image: "images/icons/github.svg",
-            technologiesUsed: ["Java", "Spring Boot", "Spring Security", "Spring Data JPA", "Hibernate", "JavaMailSender", "MySQL", "H2 Database (Testing)", "Stripe/PayPal APIs", "React", "HTML", "CSS", "JavaScript", "Redis", "🧪 Tested with JUnit 5 & Mockito", " 🔐 JWT-based"]
+            technologiesUsed: [
+                "☕ Java",
+                "🌱 Spring Boot",
+                "🔐 Spring Security",
+                "🗂️ Spring Data JPA",
+                "📦 Hibernate",
+                "✉️ JavaMailSender",
+                "🛢️ MySQL",
+                "🧪 H2 Database (Testing)",
+                "💳 Stripe/PayPal APIs",
+                "⚛️ React",
+                "🖼️ HTML",
+                "🎨 CSS",
+                "🧠 JavaScript",
+                "⚡ Redis",
+                "🧪 Tested with JUnit 5 & Mockito",
+                "🔐 JWT-based"
+            ]
         },
         {
             id: 3,
             name: "Arabic Compiler",
+            type: "MVC Application",
             description: "This project implements a Lexical Analyzer and Parser for a custom programming language that supports Arabic keywords. It features tokenization and syntactic analysis capabilities to build an Abstract Syntax Tree (AST) for source code interpretation.",
             link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
             image:"images/icons/github.svg",
-            technologiesUsed: ["C#", ".NET Core", "ASP.NET", "Visual Studio Code", "HTML", "CSS"]
+            technologiesUsed: [
+                "⚙️ C#",
+                "🌐 .NET Core",
+                "🧩 ASP.NET",
+                "📝 Visual Studio Code",
+                "🖼️ HTML",
+                "🎨 CSS"
+            ]
         },
         {
-            "id": 4,
-            "name": "Pharmacy Management System Frontend",
-            "description": "A comprehensive frontend for a Pharmacy Management System (PMS) designed to streamline pharmacy operations. It supports prescription management, inventory control, sales and billing, reporting, and user management with secure authentication. The system enhances efficiency, accuracy, and customer service while ensuring regulatory compliance.",
-            "link": "https://github.com/ELglaly/Pharmacy-Frontend",
-            "image": "images/icons/pharmacy.svg",
-            "technologiesUsed": ["Java", "JavaFX", "MySQL", "H2 Database", "SRS", "UML", "Test Driven Development (TDD)",
-                "Java Collections", "JavaFX CSS", "JavaFX Scene Builder"]
+            id: 4,
+            name : "Pharmacy Management System Frontend",
+            type: "Desktop Application",
+            description: "A comprehensive frontend for a Pharmacy Management System (PMS) designed to streamline pharmacy operations. It supports prescription management, inventory control, sales and billing, reporting, and user management with secure authentication. The system enhances efficiency, accuracy, and customer service while ensuring regulatory compliance.",
+            link: "https://github.com/ELglaly/Pharmacy-Frontend",
+            image: "images/icons/pharmacy.svg",
+            technologiesUsed : [
+                "☕ Java",
+                "🖼️ JavaFX",
+                "🛢️ MySQL",
+                "🧪 H2 Database",
+                "📄 SRS",
+                "🧱 UML",
+                "🧪 Test Driven Development (TDD)",
+                "🗃️ Java Collections",
+                "🎨 JavaFX CSS",
+                "🧰 JavaFX Scene Builder"
+            ]
         }
-
-    ],
+    ]
+,
     certifications: [
         {
             institutionName: "Amazon",
@@ -568,64 +620,36 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Projects
+
     const projectsContainer = document.getElementById('projects-container');
+
+// Render projects
     profile.projects.forEach(project => {
         const projectItem = document.createElement('li');
         projectItem.className = 'folio-list__item column';
-        projectItem.setAttribute('data-animate-el', '');    
+        projectItem.setAttribute('data-animate-el', '');
         projectItem.innerHTML = `
-            <a class="folio-list__item-link" href="#project-${project.id}">
-                <div class="folio-list__item-pic">
-                    <img src="${project.image}" srcset="${project.image} 1x, ${project.image.replace('.svg', '@2x.svg')} 2x" alt="" loading="lazy">
-                </div>
-                <div class="folio-list__item-text">
-                    <div class="folio-list__item-cat">Website</div>
-                    <div class="folio-list__item-title">${project.name}</div>
-                </div>
-            </a>
-            <div id="project-${project.id}|" hidden>
-                <div class="modal-popup">
-                    <img src="${project.image}" alt="" loading="lazy">
-                    <div class="modal-popup__desc">
-                        <h5>${project.name}</h5>
-                        <p>${project.description}</p>
-                    </div>
-                    <a href="${project.link}" target="_blank" class="btn btn-primary mt-auto">GitHub link</a>
-                </div>
+        <div class="folio-list__item-link" " data-project-id="${project.id}">
+            <div class="folio-list__item-pic">
+                <img src="${project.image}" alt="${project.name}" class="timeline__image" loading="lazy" />
             </div>
-        `;
+            <div class="folio-list__item-text">
+                <div class="folio-list__item-cat">${project.type || 'Uncategorized'}</div>
+                <div class="folio-list__item-title">${project.name}</div>
+            </div>
+        </div>
+          <div style="margin-bottom: 20px">
+              <p>${project.description}</p>
+                    <ul class="modal-popup__cat">
+                        ${project.technologiesUsed.map(tech => `<li>${tech}</li>`).join('')}
+                    </ul>
+          </div>
+
+          <a href="${project.link}" target="_blank" class="btn btn-primary mt-auto">GitHub link</a>
+    `;
         projectsContainer.appendChild(projectItem);
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
-    // Get all project links
-    const projectLinks = document.querySelectorAll('.folio-list__item-link');
-    
-    // Add click event to each project link
-    projectLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const projectId = this.getAttribute('data-project-id');
-            const modal = document.getElementById(`project-${projectId}`);
-            
-            // Show the modal
-            if (modal) {
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            }
-        });
-    });
-
-    // Close modal when clicking close button or outside
-    document.querySelectorAll('.modal-popup').forEach(modal => {
-        modal.addEventListener('click', function(e) {
-            if (e.target === this || e.target.classList.contains('modal-popup__close')) {
-                this.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            }
-        });
-    });
-});
 
     // Certificates
     const certificatesContainer = document.getElementById('certificateElement');
