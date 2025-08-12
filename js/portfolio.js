@@ -5,7 +5,7 @@ const profile = {
     address: "Cairo, Egypt",
     githubLink: "https://github.com/ELglaly",
     linkedinLink: "https://www.linkedin.com/in/sherif-elglaly/",
-    bio: "Senior Software Engineering Student | USAID Scholar",
+    bio: "Software Engineer| USAID Scholar | University of Arizona Alumni",
     cvLink: "https://drive.google.com/file/d/1fAYtBeMlPgOq1fGOxcNqI4VSxeVBwPjV/view?usp=sharing",
     about: "My name is Sherif Shawashen. preferred by Sherif Elglaly. " +
         "I am a and I am a Backend Software Engineer, USAID Scholar and University of Arizona Alumni," +
