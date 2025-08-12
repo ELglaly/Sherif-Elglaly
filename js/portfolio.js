@@ -7,12 +7,18 @@ const profile = {
     linkedinLink: "https://www.linkedin.com/in/sherif-elglaly/",
     bio: "Senior Software Engineering Student | USAID Scholar",
     cvLink: "https://drive.google.com/file/d/1fAYtBeMlPgOq1fGOxcNqI4VSxeVBwPjV/view?usp=sharing",
-    about: "My name is Sherif Shawshen. preferred by Sherif Elglaly. " +
-        "I am a senior Software Engineering student at Assiut University," +
-        " currently ranked fourth in my department, and a USAID Scholar as a recipient " +
-        "of a USAID scholarship for my bachelor's degree.\n\nWhen I first started studying " +
-        "Software Engineering, my goal was to improve my skills in software development and its " +
-        "applications. While this focus helped me do well academically, I've always wanted to learn more beyond what was required in my courses. My experiences during my studies, internships, and exchange program have shaped my skills, aspirations, and desire to continue my education.",
+    about: "My name is Sherif Shawashen. preferred by Sherif Elglaly. " +
+        "I am a and I am a Backend Software Engineer, USAID Scholar and University of Arizona Alumni," +
+        " currently ranked fourth in my department"+
+        ".When I first started studying Software Engineering, my goal was to improve my skills in software development. " +
+        "I have always been willing to adapt to new technologies because I believe that a growth mindset and continuous learning are key" +
+        " to success in our field. Over time, I have built a strong technical foundation in Java, Spring Boot, and modern development practices" +
+        "I am now seeking opportunities to apply my skills in designing and implementing scalable, efficient, and maintainable software solutions. " +
+        "My experience includes building backend systems, integrating APIs, and following best practices such as SOLID principles, " +
+        "clean architecture, and version control with Git. I am passionate about problem-solving and committed to delivering high-quality code through testing, " +
+        "documentation, and collaboration with cross-functional teams." +
+        "I aim to work in an environment that challenges me to innovate, sharpens my technical abilities, and allows me to contribute to impactful projects that make a real difference.",
+
     skills: [
         { name: "C#", category: "Programming Languages", level: "Advanced" },
         { name: "Python", category: "Programming Languages", level: "Intermediate" },
@@ -49,8 +55,8 @@ const profile = {
             degree: "Non-Degree Seeking, Computer Science",
             location: "Tucson, Arizona, USA",
             startDate: "Aug 2024",
-            endDate: "Present",
-            grade: "4.00",
+            endDate: "Dec 2024",
+            grade: "Term Honor: Dean’s List with distinction (4.0 GPA)",
             description: "During my time as an exchange student at the University of Arizona, I've had the opportunity to dive into advanced coursework and develop a strong foundation in key areas of Computer Science. I'm proud to have earned a perfect GPA of 4.0."
         },
         {
@@ -58,8 +64,8 @@ const profile = {
             degree: "Bachelor's degree, Computer Software Engineering",
             location: "Assiut, Egypt",
             startDate: "Sep 2021",
-            endDate: "Expected Jun 2025",
-            grade: "3.59",
+            endDate: "July 2025",
+            grade: "3.66",
             description: "𝘼𝙘𝙖𝙙𝙚𝙢𝙞𝙘 𝘼𝙘𝙝𝙞𝙚𝙫𝙚𝙢𝙚𝙣𝙩: securing fourth place in the Software Engineering department"
         },
         {
@@ -98,7 +104,7 @@ const profile = {
             image: "images/icons/github.svg",
             technologiesUsed: [
                 "☕ Java 23",
-                "🌱 Spring Boot 3.4.3",
+                "🌱 Spring Boot",
                 "🔐 Spring Security with JWT",
                 "🔄 Spring WebSocket",
                 "🗂️ Spring Data JPA",
@@ -128,11 +134,6 @@ const profile = {
                 "✉️ JavaMailSender",
                 "🛢️ MySQL",
                 "🧪 H2 Database (Testing)",
-                "💳 Stripe/PayPal APIs",
-                "⚛️ React",
-                "🖼️ HTML",
-                "🎨 CSS",
-                "🧠 JavaScript",
                 "⚡ Redis",
                 "🧪 Tested with JUnit 5 & Mockito",
                 "🔐 JWT-based"
@@ -177,6 +178,13 @@ const profile = {
     ]
     ,
     certifications: [
+        {
+            "institutionName": "Amazon",
+            "certificateName": " Amazon Junior Software Developer",
+            "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/OFP6DUB51UGY",
+            "date": "Issued June 2025",
+            "description": ""
+        },
         {
             "institutionName": "Amazon",
             "certificateName": "Application Development",
