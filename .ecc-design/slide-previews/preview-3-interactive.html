@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Preview 3 — Interactive Split Panel</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0e0e10;color:#a1a1a2;font-family:'Public Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+
+/* Section */
+.section{padding:4rem 0 5rem}
+.section-header{padding:0 6vw 3rem}
+.section-pretitle{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#eabe7c;margin-bottom:.5rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);color:#fff;line-height:1.2}
+.section-title em{font-style:normal;color:#eabe7c}
+
+/* Split layout */
+.split{display:grid;grid-template-columns:380px 1fr;min-height:580px}
+
+/* Left: project list */
+.proj-list{
+    border-right:1px solid rgba(255,255,255,.05);
+    padding:1rem 0;
+    position:relative;
+}
+
+.proj-list-item{
+    display:flex;
+    align-items:flex-start;
+    gap:1.25rem;
+    padding:1.4rem 2rem;
+    cursor:pointer;
+    border-left:3px solid transparent;
+    transition:all .25s ease;
+    position:relative;
+}
+.proj-list-item:hover{background:rgba(255,255,255,.025)}
+.proj-list-item.active{
+    background:rgba(255,255,255,.04);
+    border-left-color:var(--accent,#eabe7c);
+}
+
+.proj-list-num{
+    font-family:'DM Serif Display',serif;
+    font-size:1.3rem;
+    color:rgba(255,255,255,.2);
+    min-width:32px;
+    padding-top:2px;
+    transition:color .25s;
+}
+.proj-list-item.active .proj-list-num,
+.proj-list-item:hover .proj-list-num{color:var(--accent,#eabe7c)}
+
+.proj-list-info{flex:1}
+.proj-list-name{font-size:.9rem;font-weight:700;color:rgba(255,255,255,.7);transition:color .25s;margin-bottom:3px}
+.proj-list-item.active .proj-list-name,
+.proj-list-item:hover .proj-list-name{color:#fff}
+.proj-list-type{font-size:.65rem;color:rgba(255,255,255,.3);letter-spacing:.5px}
+
+/* Colored dot */
+.proj-list-dot{
+    width:8px;height:8px;border-radius:50%;
+    margin-top:6px;
+    flex-shrink:0;
+    opacity:.4;
+    transition:opacity .25s;
+}
+.proj-list-item.active .proj-list-dot,
+.proj-list-item:hover .proj-list-dot{opacity:1}
+
+/* Right: detail panel */
+.proj-detail{
+    padding:2.5rem 4rem;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Big background number */
+.detail-bg-num{
+    position:absolute;
+    right:-20px;
+    top:-20px;
+    font-family:'DM Serif Display',serif;
+    font-size:18rem;
+    font-weight:900;
+    color:rgba(255,255,255,.022);
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+}
+
+.detail-content{position:relative;z-index:1}
+
+.detail-badges{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+.badge{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.badge--type{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.08)}
+.badge--live{background:rgba(35,150,127,.1);color:#23967f;border:1px solid rgba(35,150,127,.2);display:inline-flex;align-items:center;gap:.35rem}
+.badge--live::before{content:'';width:5px;height:5px;border-radius:50%;background:#23967f;animation:lp 1.5s ease infinite}
+@keyframes lp{0%,100%{opacity:1}50%{opacity:.3}}
+
+.detail-title{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(1.8rem,3vw,2.6rem);
+    color:#fff;
+    line-height:1.15;
+    margin-bottom:1.2rem;
+}
+
+.detail-desc{
+    font-size:.9rem;
+    line-height:1.8;
+    color:#7a7a7c;
+    max-width:580px;
+    margin-bottom:1.8rem;
+}
+
+/* Metrics row */
+.detail-metrics{
+    display:flex;
+    gap:2rem;
+    margin-bottom:2rem;
+    flex-wrap:wrap;
+}
+.metric{
+    padding-left:1rem;
+    border-left:2px solid rgba(255,255,255,.1);
+}
+.metric__val{
+    font-family:'DM Serif Display',serif;
+    font-size:1.6rem;
+    color:var(--accent,#eabe7c);
+    display:block;
+    line-height:1;
+}
+.metric__label{
+    font-size:.65rem;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:rgba(255,255,255,.3);
+    margin-top:4px;
+    display:block;
+}
+
+.detail-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:2rem}
+.chip{font-size:.68rem;font-weight:600;padding:5px 12px;border-radius:20px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.09)}
+
+.detail-actions{display:flex;gap:.75rem}
+.btn-gh{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;padding:10px 20px;border-radius:7px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.1);text-decoration:none;transition:all .2s}
+.btn-gh:hover{background:rgba(255,255,255,.13);color:#fff}
+.btn-primary{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;padding:10px 20px;border-radius:7px;background:#eabe7c;color:#000;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:#d9a56f}
+
+/* Gradient accent line at top of detail */
+.detail-accent-line{
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background:var(--accent,#eabe7c);
+    opacity:.7;
+}
+
+/* Panels — show/hide */
+.panel{display:none}
+.panel.active{display:block}
+
+/* Projects counter */
+.proj-list-footer{
+    padding:1rem 2rem;
+    border-top:1px solid rgba(255,255,255,.05);
+    font-size:.65rem;
+    color:rgba(255,255,255,.25);
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* View all */
+.view-all-row{padding:1.5rem 6vw 0;display:flex;justify-content:center}
+.view-all{display:inline-flex;align-items:center;gap:.6rem;font-size:.8rem;font-weight:600;color:rgba(255,255,255,.45);text-decoration:none;border:1px solid rgba(255,255,255,.1);padding:11px 26px;border-radius:8px;transition:all .2s}
+.view-all:hover{color:#eabe7c;border-color:#eabe7c;background:rgba(234,190,124,.06)}
+
+.preview-tag{position:fixed;top:1rem;right:1rem;background:#eabe7c;color:#000;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:20px}
+</style>
+</head>
+<body>
+<div class="preview-tag">PREVIEW 3 — INTERACTIVE SPLIT PANEL</div>
+
+<div class="section">
+  <div class="section-header">
+    <p class="section-pretitle">Projects</p>
+    <h2 class="section-title">Things I've built — <em>select one to explore</em></h2>
+  </div>
+
+  <div class="split">
+    <!-- Left list -->
+    <nav class="proj-list" aria-label="Project list">
+
+      <div class="proj-list-item active" style="--accent:#eabe7c" data-target="p1" onclick="activate(this,'p1','#eabe7c')">
+        <div class="proj-list-num">01</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">Repo Buddy</div>
+          <div class="proj-list-type">IntelliJ Plugin · Developer Tool</div>
+        </div>
+        <div class="proj-list-dot" style="background:#eabe7c"></div>
+      </div>
+
+      <div class="proj-list-item" style="--accent:#764ba2" data-target="p2" onclick="activate(this,'p2','#764ba2')">
+        <div class="proj-list-num">02</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">AI Learning Roadmap Generator</div>
+          <div class="proj-list-type">AI Integration · Backend API</div>
+        </div>
+        <div class="proj-list-dot" style="background:#764ba2"></div>
+      </div>
+
+      <div class="proj-list-item" style="--accent:#23967f" data-target="p3" onclick="activate(this,'p3','#23967f')">
+        <div class="proj-list-num">03</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">E-commerce Platform API</div>
+          <div class="proj-list-type">Backend API · Full-Stack Ready</div>
+        </div>
+        <div class="proj-list-dot" style="background:#23967f"></div>
+      </div>
+
+      <div class="proj-list-item" style="--accent:#2a5298" data-target="p4" onclick="activate(this,'p4','#2a5298')">
+        <div class="proj-list-num">04</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">Arabic Language Compiler</div>
+          <div class="proj-list-type">Compiler Design · Language Engineering</div>
+        </div>
+        <div class="proj-list-dot" style="background:#2a5298"></div>
+      </div>
+
+      <div class="proj-list-item" style="--accent:#c94b4b" data-target="p5" onclick="activate(this,'p5','#c94b4b')">
+        <div class="proj-list-num">05</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">Task Management API</div>
+          <div class="proj-list-type">Backend API · Clean Architecture</div>
+        </div>
+        <div class="proj-list-dot" style="background:#c94b4b"></div>
+      </div>
+
+      <div class="proj-list-item" style="--accent:#2193b0" data-target="p6" onclick="activate(this,'p6','#2193b0')">
+        <div class="proj-list-num">06</div>
+        <div class="proj-list-info">
+          <div class="proj-list-name">Pharmacy Management System</div>
+          <div class="proj-list-type">Desktop Application · Healthcare</div>
+        </div>
+        <div class="proj-list-dot" style="background:#2193b0"></div>
+      </div>
+
+      <div class="proj-list-footer">6 projects total</div>
+    </nav>
+
+    <!-- Right detail panels -->
+    <div class="proj-detail" id="detail-panel">
+
+      <div class="panel active" id="p1" style="--accent:#eabe7c">
+        <div class="detail-accent-line"></div>
+        <div class="detail-bg-num">01</div>
+        <div class="detail-content">
+          <div class="detail-badges">
+            <span class="badge badge--type">IntelliJ Plugin · Developer Tool</span>
+            <span class="badge badge--live">Published on JetBrains Marketplace</span>
+          </div>
+          <h3 class="detail-title">Repo Buddy</h3>
+          <p class="detail-desc">An IntelliJ IDEA plugin that lets Spring Boot developers execute JPA repository methods directly from the IDE — no tests, no Postman, no deploy cycle. Click a gutter icon, fill in parameters, and instantly see query results, captured SQL, and execution timing. 30+ random data generation rules and a built-in call-chain tracer for endpoint-to-repository mapping.</p>
+          <div class="detail-metrics">
+            <div class="metric"><span class="metric__val">v1.0.4</span><span class="metric__label">Current Version</span></div>
+            <div class="metric"><span class="metric__val">30+</span><span class="metric__label">Data Gen Rules</span></div>
+            <div class="metric"><span class="metric__val">0</span><span class="metric__label">Config Required</span></div>
+          </div>
+          <div class="detail-tech">
+            <span class="chip">Java 17</span><span class="chip">Spring Boot</span><span class="chip">Spring Data JPA</span><span class="chip">IntelliJ SDK</span><span class="chip">Gradle</span><span class="chip">Hibernate</span>
+          </div>
+          <div class="detail-actions">
+            <a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a>
+            <a href="#" class="btn-primary">JetBrains Marketplace ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p2" style="--accent:#764ba2">
+        <div class="detail-accent-line"></div>
+        <div class="detail-bg-num">02</div>
+        <div class="detail-content">
+          <div class="detail-badges"><span class="badge badge--type">AI Integration · Backend API</span></div>
+          <h3 class="detail-title">AI Learning Roadmap Generator</h3>
+          <p class="detail-desc">Generates personalized, step-by-step learning roadmaps by analyzing a user's experience level and goals via OpenAI and Google Cloud AI. Achieves 60% faster response times through Redis caching (300ms P95). Real-time progress tracking over WebSocket with JWT/OAuth2 authentication and rate limiting.</p>
+          <div class="detail-metrics">
+            <div class="metric"><span class="metric__val">60%</span><span class="metric__label">Faster Responses</span></div>
+            <div class="metric"><span class="metric__val">300ms</span><span class="metric__label">P95 Latency</span></div>
+          </div>
+          <div class="detail-tech"><span class="chip">Java 23</span><span class="chip">Spring Boot</span><span class="chip">Spring AI</span><span class="chip">OpenAI</span><span class="chip">Google Cloud AI</span><span class="chip">Redis</span><span class="chip">MySQL</span><span class="chip">WebSocket</span><span class="chip">JWT/OAuth2</span></div>
+          <div class="detail-actions"><a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p3" style="--accent:#23967f">
+        <div class="detail-accent-line"></div>
+        <div class="detail-bg-num">03</div>
+        <div class="detail-content">
+          <div class="detail-badges"><span class="badge badge--type">Backend API · Full-Stack Ready</span></div>
+          <h3 class="detail-title">E-commerce Platform API</h3>
+          <p class="detail-desc">Production-grade e-commerce backend with 20+ REST endpoints covering catalog, cart, checkout, and order management. Stripe and PayPal payment integration. 90%+ test coverage with JUnit 5 and Mockito. Role-based access control and Redis session management.</p>
+          <div class="detail-metrics">
+            <div class="metric"><span class="metric__val">20+</span><span class="metric__label">API Endpoints</span></div>
+            <div class="metric"><span class="metric__val">90%+</span><span class="metric__label">Test Coverage</span></div>
+          </div>
+          <div class="detail-tech"><span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">MySQL</span><span class="chip">Stripe</span><span class="chip">PayPal</span><span class="chip">Redis</span><span class="chip">JUnit 5</span></div>
+          <div class="detail-actions"><a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p4" style="--accent:#2a5298">
+        <div class="detail-accent-line"></div><div class="detail-bg-num">04</div>
+        <div class="detail-content">
+          <div class="detail-badges"><span class="badge badge--type">Compiler Design · Language Engineering</span></div>
+          <h3 class="detail-title">Arabic Language Compiler</h3>
+          <p class="detail-desc">A compiler that lets Arabic-speaking developers write code in their native language — from lexer to AST. Achieves 95% syntax validation accuracy using automata theory. Ships with an ASP.NET MVC web UI for real-time tokenization visualization, cutting debug time by 40%.</p>
+          <div class="detail-metrics"><div class="metric"><span class="metric__val">95%</span><span class="metric__label">Syntax Accuracy</span></div><div class="metric"><span class="metric__val">40%</span><span class="metric__label">Faster Debugging</span></div></div>
+          <div class="detail-tech"><span class="chip">C#</span><span class="chip">.NET Core</span><span class="chip">ASP.NET MVC</span><span class="chip">Automata Theory</span><span class="chip">Lexical Analysis</span></div>
+          <div class="detail-actions"><a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a></div>
+        </div>
+      </div>
+
+      <div class="panel" id="p5" style="--accent:#c94b4b"><div class="detail-accent-line"></div><div class="detail-bg-num">05</div><div class="detail-content"><div class="detail-badges"><span class="badge badge--type">Backend API · Clean Architecture</span></div><h3 class="detail-title">Task Management API</h3><p class="detail-desc">Secure, multi-tenant task management REST API with JWT auth, role-based access control, and per-user data isolation. Built on Spring Boot 3.x with global exception handling, pagination, input validation, and clean repository-service-controller separation.</p><div class="detail-tech"><span class="chip">Java 17</span><span class="chip">Spring Boot 3</span><span class="chip">JWT</span><span class="chip">Spring Security</span><span class="chip">H2</span><span class="chip">Maven</span></div><div class="detail-actions"><a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a></div></div></div>
+
+      <div class="panel" id="p6" style="--accent:#2193b0"><div class="detail-accent-line"></div><div class="detail-bg-num">06</div><div class="detail-content"><div class="detail-badges"><span class="badge badge--type">Desktop Application · Healthcare</span></div><h3 class="detail-title">Pharmacy Management System</h3><p class="detail-desc">Full-featured pharmacy operations system covering prescription handling, inventory, billing, and role-based access. Built with TDD methodology (test-first) to meet healthcare reliability requirements. JavaFX UI with Scene Builder, documented with SRS and UML diagrams.</p><div class="detail-tech"><span class="chip">Java</span><span class="chip">JavaFX</span><span class="chip">MySQL</span><span class="chip">TDD</span><span class="chip">Scene Builder</span><span class="chip">UML</span></div><div class="detail-actions"><a href="#" class="btn-gh"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>View Code</a></div></div></div>
+
+    </div>
+  </div>
+
+  <div class="view-all-row">
+    <a href="https://github.com/ELglaly" class="view-all">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      View All Repositories on GitHub
+    </a>
+  </div>
+</div>
+
+<script>
+function activate(el, panelId, accent) {
+    document.querySelectorAll('.proj-list-item').forEach(function(i){ i.classList.remove('active'); });
+    document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
+    el.classList.add('active');
+    var panel = document.getElementById(panelId);
+    panel.classList.add('active');
+    document.getElementById('detail-panel').style.setProperty('--accent', accent);
+}
+</script>
+</body>
+</html>

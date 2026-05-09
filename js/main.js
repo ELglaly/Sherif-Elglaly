@@ -73,8 +73,9 @@
 
         const preloader = document.querySelector('#preloader');
         if (!preloader) return;
-        
-        window.addEventListener('load', function() {
+
+        // Use DOMContentLoaded for faster initial display
+        const hidePreloader = function() {
             document.querySelector('html').classList.remove('ss-preload');
             document.querySelector('html').classList.add('ss-loaded');
 
@@ -83,12 +84,24 @@
             });
 
             tl.play();
-        });
+        };
 
-        // force page scroll position to top at page refresh
-        // window.addEventListener('beforeunload' , function () {
-        //     // window.scrollTo(0, 0);
-        // });
+        // Hide preloader when DOM is ready (faster than waiting for all resources)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', hidePreloader);
+        } else {
+            // DOM already loaded
+            hidePreloader();
+        }
+
+        // Fallback: force hide after 2 seconds max
+        setTimeout(function() {
+            if (preloader.style.display !== 'none') {
+                preloader.style.opacity = '0';
+                preloader.style.visibility = 'hidden';
+                preloader.style.display = 'none';
+            }
+        }, 2000);
 
     }; // end ssPreloader
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio Preview 1 — Split Engineering</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0c0e;
+  --bg2:#111116;
+  --surface:#17171d;
+  --border:rgba(255,255,255,.07);
+  --blue:#4f8ef7;
+  --blue-glow:rgba(79,142,247,.15);
+  --gold:#eabe7c;
+  --text:#c8c8d0;
+  --muted:rgba(255,255,255,.3);
+}
+html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'JetBrains Mono',monospace;font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-.5px}
+.nav-logo span{color:var(--blue)}
+.nav-links{display:flex;gap:3rem;list-style:none}
+.nav-links a{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:600;padding:.6rem 1.4rem;border:1px solid var(--blue);color:var(--blue);border-radius:4px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--blue);color:#000}
+
+/* LAYOUT */
+.hero{display:grid;grid-template-columns:1fr 1fr;height:100vh;padding-top:80px}
+
+/* LEFT PANEL */
+.hero-left{padding:5rem 4rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.hero-left::before{content:'';position:absolute;bottom:-20%;left:-20%;width:60%;height:60%;background:radial-gradient(circle,rgba(79,142,247,.08) 0%,transparent 70%);pointer-events:none}
+
+.status-pill{display:inline-flex;align-items:center;gap:.6rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.2);padding:.4rem 1rem;border-radius:20px;margin-bottom:2.5rem;width:fit-content}
+.status-pill::before{content:'';width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 1.4s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-name{font-family:'Instrument Serif',serif;font-size:clamp(3rem,5vw,5.5rem);color:#fff;line-height:1;margin-bottom:.6rem;font-style:italic}
+.hero-name em{font-style:normal;color:var(--blue)}
+.hero-role{font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--muted);margin-bottom:2.5rem;letter-spacing:.5px}
+.hero-role span{color:var(--blue)}>}
+
+.hero-bio{font-size:.95rem;line-height:1.8;color:var(--text);max-width:42ch;margin-bottom:3rem;border-left:2px solid var(--blue);padding-left:1.2rem}
+
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{font-family:'JetBrains Mono',monospace;font-size:.8rem;font-weight:600;padding:.85rem 2rem;background:var(--blue);color:#000;border-radius:4px;text-decoration:none;transition:all .2s}
+.btn-primary:hover{background:#7aadff}
+.btn-secondary{font-family:'JetBrains Mono',monospace;font-size:.8rem;padding:.85rem 2rem;background:transparent;color:var(--text);border:1px solid var(--border);border-radius:4px;text-decoration:none;transition:all .2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,.3);color:#fff}
+
+/* VERTICAL SIDEBAR */
+.sidebar-tags{position:absolute;top:50%;right:0;transform:translateY(-50%) translateX(50%) rotate(90deg);display:flex;gap:1.5rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;white-space:nowrap}
+
+/* RIGHT PANEL */
+.hero-right{background:var(--bg2);display:flex;flex-direction:column;padding:5rem 3.5rem 4rem;gap:2rem;overflow:hidden}
+
+.terminal{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:2rem;flex:1;font-family:'JetBrains Mono',monospace;font-size:.82rem;line-height:1.8;overflow:hidden;position:relative}
+.terminal-bar{display:flex;gap:.45rem;margin-bottom:1.5rem}
+.terminal-bar span{width:12px;height:12px;border-radius:50%}
+.dot-red{background:#ff5f57}
+.dot-yellow{background:#ffbd2e}
+.dot-green{background:#28c941}
+.t-comment{color:rgba(255,255,255,.25)}
+.t-key{color:var(--blue)}
+.t-str{color:var(--gold)}
+.t-num{color:#f39c12}
+.t-ok{color:#4ade80}
+.t-line{display:block}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.stat-box{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1rem;text-align:center;position:relative;overflow:hidden;transition:border-color .2s}
+.stat-box:hover{border-color:var(--blue)}
+.stat-box::before{content:'';position:absolute;inset:0;background:var(--blue-glow);opacity:0;transition:opacity .2s}
+.stat-box:hover::before{opacity:1}
+.stat-num{font-family:'Instrument Serif',serif;font-size:2.2rem;color:#fff;display:block;line-height:1}
+.stat-num span{color:var(--blue);font-size:1.4rem}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:.4rem;display:block}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;padding:.3rem .8rem;border-radius:4px;background:rgba(79,142,247,.08);color:var(--blue);border:1px solid rgba(79,142,247,.2)}
+
+.preview-badge{position:fixed;top:1rem;right:1rem;background:var(--blue);color:#000;font-family:'JetBrains Mono',monospace;font-size:.7rem;font-weight:700;letter-spacing:1px;padding:.4rem 1rem;border-radius:20px;z-index:999}
+</style>
+</head>
+<body>
+<div class="preview-badge">PREVIEW 1 — SPLIT ENGINEERING</div>
+
+<nav>
+  <div class="nav-logo">SE<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">Skills</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Download CV</a>
+</nav>
+
+<div class="hero">
+  <!-- LEFT -->
+  <div class="hero-left">
+    <div class="status-pill">Open to Opportunities</div>
+
+    <h1 class="hero-name">Sherif<br><em>Elglaly</em></h1>
+    <p class="hero-role">Backend Engineer <span>·</span> Java · Spring Boot · AI</p>
+
+    <p class="hero-bio">I build fast, reliable backend systems — from published IDE plugins to AI-driven APIs and financial transaction engines handling 100K+ users.</p>
+
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">View Projects →</a>
+      <a href="#" class="btn-secondary">Download CV</a>
+    </div>
+
+    <div class="sidebar-tags">Spring Boot · PostgreSQL · IntelliJ SDK · Redis · Spring AI</div>
+  </div>
+
+  <!-- RIGHT -->
+  <div class="hero-right">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+      </div>
+      <span class="t-line t-comment">// sherif-elglaly.profile.json</span>
+      <span class="t-line">{</span>
+      <span class="t-line">  <span class="t-key">"role"</span>: <span class="t-str">"Backend Engineer"</span>,</span>
+      <span class="t-line">  <span class="t-key">"stack"</span>: [<span class="t-str">"Java"</span>, <span class="t-str">"Spring Boot"</span>, <span class="t-str">"PostgreSQL"</span>],</span>
+      <span class="t-line">  <span class="t-key">"published"</span>: <span class="t-str">"JetBrains Marketplace v1.0.4"</span>,</span>
+      <span class="t-line">  <span class="t-key">"gpa"</span>: <span class="t-num">4.0</span>,</span>
+      <span class="t-line">  <span class="t-key">"rank"</span>: <span class="t-str">"4th in CS dept."</span>,</span>
+      <span class="t-line">  <span class="t-key">"scholarship"</span>: <span class="t-str">"USAID Scholar"</span>,</span>
+      <span class="t-line">  <span class="t-key">"status"</span>: <span class="t-ok">"available"</span></span>
+      <span class="t-line">}</span>
+      <span class="t-line"> </span>
+      <span class="t-line t-comment">// $ ./run --latest-project</span>
+      <span class="t-line"><span class="t-ok">✓</span> Repo Buddy v1.0.4 published on Marketplace</span>
+      <span class="t-line"><span class="t-ok">✓</span> AI Roadmap API — 60% faster via Redis cache</span>
+      <span class="t-line"><span class="t-ok">✓</span> E-commerce API — 90%+ test coverage</span>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-box">
+        <span class="stat-num">6<span>+</span></span>
+        <span class="stat-label">Projects Shipped</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">4.0</span>
+        <span class="stat-label">Dean's List GPA</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-num">10<span>+</span></span>
+        <span class="stat-label">Certifications</span>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Java 23</span>
+      <span class="tag">Spring Boot 3</span>
+      <span class="tag">Spring AI</span>
+      <span class="tag">Redis</span>
+      <span class="tag">PostgreSQL</span>
+      <span class="tag">Docker</span>
+      <span class="tag">JWT/OAuth2</span>
+      <span class="tag">IntelliJ SDK</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

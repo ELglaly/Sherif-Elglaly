@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wsl ls:*)",
+      "Bash(dir:*)",
+      "Bash(powershell:*)",
+      "Bash(forfiles /P \"E:\\\\Sherif-Elglaly\\\\js\" /C \"cmd /c echo @file @fsize\")",
+      "WebFetch(domain:raw.githubusercontent.com)"
+    ]
+  }
+}

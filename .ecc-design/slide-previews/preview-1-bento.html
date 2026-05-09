@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Preview 1 — Bento Grid</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#0e0e10;color:#a1a1a2;font-family:'Public Sans',sans-serif;min-height:100vh;padding:3rem 4vw 5rem}
+
+/* Label */
+.style-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#eabe7c;margin-bottom:.5rem}
+.section-pretitle{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#eabe7c;margin-bottom:.5rem}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:#fff;line-height:1.15;margin-bottom:3rem}
+.section-title span{color:#eabe7c}
+
+/* Bento Grid */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:auto;gap:1.1rem}
+
+/* Featured — spans 8 cols, tall */
+.bento__featured{
+    grid-column:1/9;
+    grid-row:1/2;
+    background:#18181b;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    min-height:340px;
+    position:relative;
+    transition:transform .25s,box-shadow .25s;
+}
+.bento__featured:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+
+/* Side stack — spans 4 cols */
+.bento__side{grid-column:9/13;grid-row:1/2;display:flex;flex-direction:column;gap:1.1rem}
+.bento__sm{
+    background:#18181b;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+    overflow:hidden;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-height:155px;
+    position:relative;
+    transition:transform .25s,box-shadow .25s;
+}
+.bento__sm:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+
+/* Bottom row — 4 cols each */
+.bento__row{grid-column:1/13;display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.bento__mini{
+    background:#18181b;
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:16px;
+    overflow:hidden;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    transition:transform .25s,box-shadow .25s;
+}
+.bento__mini:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+
+/* Card anatomy */
+.card-stripe{height:4px;width:100%}
+.card-body{padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+.card-num{font-family:'DM Serif Display',serif;font-size:1rem;color:rgba(255,255,255,.2);line-height:1}
+.card-type{font-size:.63rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.card-title{font-size:1.25rem;font-weight:700;color:#fff;line-height:1.25}
+.card-title--lg{font-size:1.7rem}
+.card-desc{font-size:.8rem;line-height:1.65;color:#7a7a7c;flex:1}
+.card-tech{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;padding-top:.6rem}
+.chip{font-size:.64rem;font-weight:600;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.08)}
+.card-footer{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,.05);display:flex;gap:.6rem;align-items:center}
+.btn-gh{font-size:.73rem;font-weight:600;padding:7px 14px;border-radius:6px;background:rgba(255,255,255,.07);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.1);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;transition:all .2s}
+.btn-gh:hover{background:rgba(255,255,255,.13);color:#fff}
+.btn-demo{font-size:.73rem;font-weight:700;padding:7px 14px;border-radius:6px;background:#eabe7c;color:#000;text-decoration:none;transition:all .2s}
+.btn-demo:hover{background:#d9a56f}
+
+/* Background big number */
+.bg-num{position:absolute;right:-10px;bottom:-10px;font-family:'DM Serif Display',serif;font-size:9rem;font-weight:900;color:rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none}
+
+/* Featured extra badge */
+.badge-featured{display:inline-block;font-size:.58rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(234,190,124,.15);color:#eabe7c;border:1px solid rgba(234,190,124,.25);margin-bottom:.5rem}
+
+/* Marketplace badge */
+.badge-live{display:inline-flex;align-items:center;gap:.35rem;font-size:.63rem;font-weight:700;color:#23967f;background:rgba(35,150,127,.1);border:1px solid rgba(35,150,127,.2);padding:3px 10px;border-radius:20px}
+.badge-live::before{content:'';width:6px;height:6px;border-radius:50%;background:#23967f;animation:livepulse 1.5s ease-in-out infinite}
+@keyframes livepulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.preview-tag{position:fixed;top:1rem;right:1rem;background:#eabe7c;color:#000;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:20px}
+</style>
+</head>
+<body>
+<div class="preview-tag">PREVIEW 1 — BENTO GRID</div>
+
+<p class="section-pretitle">Projects</p>
+<h2 class="section-title">Things I've built — <span>from published IDE plugins</span><br>to AI-driven APIs and compilers.</h2>
+
+<div class="bento">
+
+  <!-- Featured -->
+  <div class="bento__featured">
+    <div class="card-stripe" style="background:linear-gradient(90deg,#c9935a,#eabe7c)"></div>
+    <div class="card-body">
+      <span class="badge-featured">Featured Project</span>
+      <span class="card-num">01</span>
+      <span class="card-type">IntelliJ Plugin · Developer Tool</span>
+      <h3 class="card-title card-title--lg">Repo Buddy</h3>
+      <p class="card-desc">An IntelliJ IDEA plugin that lets Spring Boot developers execute JPA repository methods directly from the IDE — no tests, no Postman, no deploy cycle. Click a gutter icon, fill in parameters, and instantly see query results, captured SQL, and execution timing. Published on the JetBrains Marketplace (v1.0.4) with 30+ random data generation rules.</p>
+      <div class="card-tech">
+        <span class="chip">Java 17</span><span class="chip">Spring Boot</span><span class="chip">Spring Data JPA</span><span class="chip">IntelliJ SDK</span><span class="chip">Gradle</span><span class="chip">Hibernate</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="badge-live">Published on JetBrains Marketplace</span>
+      <a href="#" class="btn-gh">View Code</a>
+    </div>
+    <span class="bg-num">01</span>
+  </div>
+
+  <!-- Side cards -->
+  <div class="bento__side">
+    <div class="bento__sm">
+      <div class="card-stripe" style="background:linear-gradient(90deg,#667eea,#764ba2)"></div>
+      <div class="card-body">
+        <span class="card-num">02</span>
+        <span class="card-type">AI Integration · Backend API</span>
+        <h3 class="card-title">AI Learning Roadmap Generator</h3>
+        <div class="card-tech">
+          <span class="chip">Java 23</span><span class="chip">Spring AI</span><span class="chip">Redis</span><span class="chip">WebSocket</span>
+        </div>
+      </div>
+      <div class="card-footer"><a href="#" class="btn-gh">View Code</a></div>
+      <span class="bg-num" style="font-size:5rem">02</span>
+    </div>
+    <div class="bento__sm">
+      <div class="card-stripe" style="background:linear-gradient(90deg,#23967f,#0b7a69)"></div>
+      <div class="card-body">
+        <span class="card-num">03</span>
+        <span class="card-type">Backend API · Full-Stack Ready</span>
+        <h3 class="card-title">E-commerce Platform API</h3>
+        <div class="card-tech">
+          <span class="chip">Spring Boot</span><span class="chip">Stripe</span><span class="chip">JWT</span>
+        </div>
+      </div>
+      <div class="card-footer"><a href="#" class="btn-gh">View Code</a></div>
+      <span class="bg-num" style="font-size:5rem">03</span>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="bento__row">
+    <div class="bento__mini">
+      <div class="card-stripe" style="background:linear-gradient(90deg,#1e3c72,#2a5298)"></div>
+      <div class="card-body">
+        <span class="card-num">04</span>
+        <span class="card-type">Compiler Design</span>
+        <h3 class="card-title" style="font-size:1rem">Arabic Language Compiler</h3>
+        <div class="card-tech"><span class="chip">C#</span><span class="chip">.NET</span><span class="chip">ASP.NET</span></div>
+      </div>
+      <div class="card-footer"><a href="#" class="btn-gh">View Code</a></div>
+    </div>
+    <div class="bento__mini">
+      <div class="card-stripe" style="background:linear-gradient(90deg,#c94b4b,#4b134f)"></div>
+      <div class="card-body">
+        <span class="card-num">05</span>
+        <span class="card-type">Backend API</span>
+        <h3 class="card-title" style="font-size:1rem">Task Management API</h3>
+        <div class="card-tech"><span class="chip">Java 17</span><span class="chip">JWT</span><span class="chip">Spring Security</span></div>
+      </div>
+      <div class="card-footer"><a href="#" class="btn-gh">View Code</a></div>
+    </div>
+    <div class="bento__mini">
+      <div class="card-stripe" style="background:linear-gradient(90deg,#2193b0,#6dd5ed)"></div>
+      <div class="card-body">
+        <span class="card-num">06</span>
+        <span class="card-type">Desktop · Healthcare</span>
+        <h3 class="card-title" style="font-size:1rem">Pharmacy Management System</h3>
+        <div class="card-tech"><span class="chip">JavaFX</span><span class="chip">TDD</span><span class="chip">MySQL</span></div>
+      </div>
+      <div class="card-footer"><a href="#" class="btn-gh">View Code</a></div>
+    </div>
+    <div class="bento__mini" style="background:linear-gradient(135deg,rgba(234,190,124,.06),rgba(35,150,127,.06));border:1px dashed rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="rgba(255,255,255,.2)"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      <span style="font-size:.72rem;color:rgba(255,255,255,.3);text-align:center;line-height:1.5">More on<br>GitHub →</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

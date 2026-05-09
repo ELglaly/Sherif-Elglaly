@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portfolio Preview 3 — Aurora Glass</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050810;
+  --purple:#7c3aed;
+  --indigo:#4f46e5;
+  --teal:#0d9488;
+  --pink:#db2777;
+  --gold:#f59e0b;
+  --text:rgba(255,255,255,.75);
+  --muted:rgba(255,255,255,.35);
+  --border:rgba(255,255,255,.08);
+  --glass:rgba(255,255,255,.04);
+  --glass-border:rgba(255,255,255,.1);
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);font-family:'Inter',sans-serif;color:var(--text)}
+
+/* AURORA BLOBS */
+.aurora{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;animation:drift 12s ease-in-out infinite alternate}
+.blob-1{width:600px;height:600px;background:radial-gradient(circle,var(--purple),transparent 70%);top:-20%;left:-10%;animation-delay:0s}
+.blob-2{width:500px;height:500px;background:radial-gradient(circle,var(--teal),transparent 70%);bottom:-10%;right:-5%;animation-delay:-4s}
+.blob-3{width:400px;height:400px;background:radial-gradient(circle,var(--indigo),transparent 70%);top:30%;right:20%;animation-delay:-8s}
+.blob-4{width:300px;height:300px;background:radial-gradient(circle,rgba(245,158,11,.6),transparent 70%);bottom:20%;left:30%;animation-delay:-2s;opacity:.35}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(30px,20px) scale(1.08)}}
+
+/* NOISE OVERLAY */
+.noise{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
+
+/* NAV */
+nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:2rem 4rem}
+.nav-logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-glass{background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(20px);border-radius:50px;padding:.6rem 2rem;display:flex;gap:2.5rem}
+.nav-glass a{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-glass a:hover{color:#fff}
+.nav-pill{background:linear-gradient(135deg,var(--purple),var(--teal));border-radius:50px;padding:.6rem 1.6rem;font-size:.82rem;font-weight:600;color:#fff;text-decoration:none;transition:opacity .2s}
+.nav-pill:hover{opacity:.85}
+
+/* HERO */
+.hero{position:relative;z-index:5;height:calc(100vh - 88px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem 4rem;gap:2.5rem}
+
+/* BADGE */
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1.4rem;background:rgba(124,58,237,.12);border:1px solid rgba(124,58,237,.3);border-radius:50px;backdrop-filter:blur(10px)}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#a78bfa;animation:glow 2s ease infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(167,139,250,.6)}50%{box-shadow:0 0 0 6px rgba(167,139,250,0)}}
+.badge-text{font-size:.78rem;font-weight:500;color:#c4b5fd;letter-spacing:.5px}
+
+/* NAME */
+.hero-name{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3.5rem,8vw,7.5rem);line-height:.95;letter-spacing:-2px}
+.name-plain{color:rgba(255,255,255,.9)}
+.name-grad{background:linear-gradient(135deg,#a78bfa 0%,#38bdf8 40%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+
+/* BIO */
+.hero-sub{font-size:clamp(.9rem,1.6vw,1.15rem);color:var(--muted);max-width:52ch;line-height:1.7}
+.hero-sub strong{color:rgba(255,255,255,.7);font-weight:500}
+
+/* CTA ROW */
+.hero-cta{display:flex;gap:1.2rem;align-items:center}
+.cta-primary{font-size:.9rem;font-weight:600;padding:.9rem 2.4rem;background:linear-gradient(135deg,var(--purple),var(--teal));border-radius:50px;color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s;box-shadow:0 0 30px rgba(124,58,237,.3)}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(124,58,237,.4)}
+.cta-secondary{font-size:.9rem;font-weight:500;padding:.9rem 2.4rem;border-radius:50px;background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(10px);color:rgba(255,255,255,.8);text-decoration:none;transition:all .2s}
+.cta-secondary:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2)}
+
+/* GLASS STATS ROW */
+.stats-row{display:flex;gap:1rem;backdrop-filter:blur(20px)}
+.stat-glass{background:var(--glass);border:1px solid var(--glass-border);border-radius:16px;padding:1.2rem 2rem;text-align:center;min-width:140px;transition:border-color .3s,background .3s}
+.stat-glass:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18)}
+.stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;display:block;line-height:1}
+.stat-val-1{background:linear-gradient(135deg,#a78bfa,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-val-2{background:linear-gradient(135deg,#38bdf8,#0d9488);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-val-3{background:linear-gradient(135deg,#fbbf24,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-lbl{font-size:.7rem;color:var(--muted);margin-top:.4rem;display:block;letter-spacing:.5px}
+
+/* MARQUEE TECH BAND */
+.tech-band{position:absolute;bottom:0;left:0;right:0;overflow:hidden;padding:.9rem 0;border-top:1px solid var(--border);backdrop-filter:blur(10px)}
+.tech-track{display:flex;gap:3rem;animation:marquee 20s linear infinite;white-space:nowrap}
+.tech-track span{font-size:.72rem;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase}
+.tech-sep{color:rgba(167,139,250,.4)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+.preview-badge{position:fixed;top:1rem;right:1rem;background:linear-gradient(135deg,var(--purple),var(--teal));color:#fff;font-size:.7rem;font-weight:600;letter-spacing:1px;padding:.4rem 1rem;border-radius:20px;z-index:999}
+</style>
+</head>
+<body>
+<div class="preview-badge">PREVIEW 3 — AURORA GLASS</div>
+
+<div class="aurora">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+<div class="noise"></div>
+
+<nav>
+  <div class="nav-logo">Sherif Elglaly</div>
+  <div class="nav-glass">
+    <a href="#">About</a>
+    <a href="#">Projects</a>
+    <a href="#">Skills</a>
+    <a href="#">Contact</a>
+  </div>
+  <a href="#" class="nav-pill">Download CV</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    <span class="badge-text">Open to backend &amp; full-stack roles</span>
+  </div>
+
+  <h1 class="hero-name">
+    <span class="name-plain">Sherif</span>
+    <span class="name-grad">Elglaly</span>
+  </h1>
+
+  <p class="hero-sub">
+    <strong>Backend Engineer</strong> building scalable APIs, AI-driven features, and production-ready systems with <strong>Java, Spring Boot, and PostgreSQL</strong>.
+    USAID Scholar · University of Arizona · Published on JetBrains Marketplace.
+  </p>
+
+  <div class="hero-cta">
+    <a href="#" class="cta-primary">View Projects →</a>
+    <a href="#" class="cta-secondary">Download CV</a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-glass">
+      <span class="stat-val stat-val-1">6+</span>
+      <span class="stat-lbl">Projects Shipped</span>
+    </div>
+    <div class="stat-glass">
+      <span class="stat-val stat-val-2">4.0</span>
+      <span class="stat-lbl">Dean's List GPA</span>
+    </div>
+    <div class="stat-glass">
+      <span class="stat-val stat-val-3">3+</span>
+      <span class="stat-lbl">Years Building</span>
+    </div>
+    <div class="stat-glass">
+      <span class="stat-val stat-val-1">10+</span>
+      <span class="stat-lbl">Certifications</span>
+    </div>
+  </div>
+
+  <div class="tech-band">
+    <div class="tech-track">
+      <span>Java 23</span><span class="tech-sep">✦</span>
+      <span>Spring Boot</span><span class="tech-sep">✦</span>
+      <span>PostgreSQL</span><span class="tech-sep">✦</span>
+      <span>Spring AI</span><span class="tech-sep">✦</span>
+      <span>Redis</span><span class="tech-sep">✦</span>
+      <span>IntelliJ SDK</span><span class="tech-sep">✦</span>
+      <span>JWT / OAuth2</span><span class="tech-sep">✦</span>
+      <span>C# · .NET</span><span class="tech-sep">✦</span>
+      <span>WebSocket</span><span class="tech-sep">✦</span>
+      <span>Docker</span><span class="tech-sep">✦</span>
+      <!-- repeat for seamless loop -->
+      <span>Java 23</span><span class="tech-sep">✦</span>
+      <span>Spring Boot</span><span class="tech-sep">✦</span>
+      <span>PostgreSQL</span><span class="tech-sep">✦</span>
+      <span>Spring AI</span><span class="tech-sep">✦</span>
+      <span>Redis</span><span class="tech-sep">✦</span>
+      <span>IntelliJ SDK</span><span class="tech-sep">✦</span>
+      <span>JWT / OAuth2</span><span class="tech-sep">✦</span>
+      <span>C# · .NET</span><span class="tech-sep">✦</span>
+      <span>WebSocket</span><span class="tech-sep">✦</span>
+      <span>Docker</span><span class="tech-sep">✦</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

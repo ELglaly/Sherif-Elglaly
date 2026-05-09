@@ -2,12 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sherif Elglaly</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Sherif Elglaly — Backend Engineer · Spring Boot · Java · AI</title>
+    <meta name="description" content="Backend Engineer building scalable APIs and AI-driven systems with Java, Spring Boot, and PostgreSQL. USAID Scholar. University of Arizona alumnus.">
+    <meta name="author" content="Sherif Elglaly">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/vendor.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/icons/github.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sherif Elglaly — Backend Engineer">
+    <meta property="og:description" content="Building scalable APIs and AI-driven systems with Java, Spring Boot, and PostgreSQL.">
+    <meta property="og:image" content="images/newyork.JPG">
+    <meta property="og:url" content="https://elglaly.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sherif Elglaly — Backend Engineer">
+    <meta name="twitter:description" content="Building scalable APIs and AI-driven systems with Java, Spring Boot, and PostgreSQL.">
+    <meta name="twitter:image" content="images/newyork.JPG">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/portfolio.js" as="script">
+
+    <!-- Critical CSS inline for faster first paint -->
+    <style>
+        #preloader{position:fixed;top:0;left:0;right:0;bottom:0;background:#000;z-index:9999;display:flex;align-items:center;justify-content:center}
+        #loader{width:50px;height:50px;border:3px solid #333;border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite}
+        @keyframes spin{to{transform:rotate(360deg)}}
+        body{margin:0;font-family:sans-serif;background:#0a0a0a;color:#fff}
+        .project-highlights{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+        .highlight-badge{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+    </style>
+
+    <!-- Load CSS with media attribute for non-blocking -->
+    <link rel="stylesheet" href="css/vendor.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="css/styles.css">
+    <noscript>
+        <link rel="stylesheet" href="css/vendor.css">
+    </noscript>
 
 </head>
 
@@ -35,21 +70,11 @@
             <nav class="column lg-12 main-nav">
                 <ul>
                     <li><a href="#" class="home-link">Sherif</a></li>
-                    <li><a href="#education" class="smoothscroll">Education</a></li>
-                    <li><a href="#experience" class="smoothscroll">Experience</a></li>
-                    <li><a href="#accomplishments" class="smoothscroll">Accomplishments</a></li>
+                    <li><a href="#about" class="smoothscroll">About</a></li>
                     <li><a href="#projects" class="smoothscroll">Projects</a></li>
-                   <li>
-                       <div class="dropdown">
-                           <a class="dropdown-btn">More</a>
-                           <div class="dropdown-content">
-                               <a href="#certificate">Certificates</a>
-                               <a href="#skills">Skills</a>
-                               <a href="#recommendation">Recommendation</a>
-                               <a href="#contact">Contacts</a>
-                           </div>
-                       </div>
-                   </li>
+                    <li><a href="#skills" class="smoothscroll">Skills</a></li>
+                    <li><a href="#experience" class="smoothscroll">Experience</a></li>
+                    <li><a href="#contact" class="smoothscroll">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -67,6 +92,10 @@
                     <li><a id="linkedin-link" href="#" target="_blank">LinkedIn</a></li>
                     <li><a id="github-link" href="#" target="_blank">GitHub</a></li>
                 </ul>
+                <div class="intro-cta" style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                    <a href="#projects" class="btn btn--medium smoothscroll">View My Work</a>
+                    <a id="cv-link-hero" href="#" target="_blank" class="btn btn--stroke btn--medium">Download CV</a>
+                </div>
             </div>
             <a href="#about" class="intro-scrolldown smoothscroll">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
@@ -76,7 +105,7 @@
         <section id="about" class="s-about target-section">
             <div class="row about-info wide" data-animate-block>
                 <div class="column lg-6 md-12 about-info__pic-block">
-                    <img src="images/newyork.JPG" srcset="images/newyork.JPG 1x, images/newyork.JPG 2x" alt="" class="about-info__pic" loading="lazy" data-animate-el>
+                    <img src="images/newyork.JPG" srcset="images/newyork.JPG 1x, images/newyork.JPG 2x" alt="Sherif Elglaly — Software Engineer" class="about-info__pic" loading="lazy" data-animate-el>
                 </div>
                 <div class="column lg-6 md-12">
                     <div class="about-info__text" >
@@ -118,13 +147,18 @@
 
 
         <section id="projects" class="s-works target-section">
-            <div class="row works-portfolio">
-                <div class="column lg-12" data-animate-block>
-                    <h2 class="text-pretitle" data-animate-el>Recent projects</h2>
-                    <p class="h1" data-animate-el>Here are some of my favorite projects I have done lately. Feel free to check them out.</p>
-                    <ul class="folio-list row block-lg-one-half block-stack-on-1000" id="projects-container"></ul>
+            <div class="row works-portfolio" data-animate-block>
+                <div class="column lg-12">
+                    <h2 class="text-pretitle" data-animate-el>Projects</h2>
+                    <p class="h1" data-animate-el>Things I've built — from published IDE plugins to AI-driven APIs and compilers.</p>
+                    <div class="section-meta" data-animate-el>
+                        <span>6 Projects</span>
+                        <span>·</span>
+                        <span>Java · Spring Boot · C# · AI/ML</span>
+                    </div>
                 </div>
             </div>
+            <ul class="projects-showcase" id="projects-container"></ul>
         </section>
 
         <section id="certificate">
@@ -160,7 +194,7 @@
             </div>
         </section>
 
-        <section id="recommendation">
+        /<section id="recommendation">
             <div class="row contact-top">
                 <div class="column lg-12">
                     <h2 class="text-pretitle">Recommendation</h2>
@@ -173,10 +207,27 @@
                         <div class="swiper-wrapper">
                             <div class="testimonial-slider__slide swiper-slide">
                                 <cite class="testimonial-slider__cite">
+                                    <strong>Amr Saad</strong>
+                                    <span>Senior Oracle APEX Developer</span>
+                                    <span>Contact Financial Holding</span>
+                                </cite>
+                                <p>Sherif has consistently demonstrated strong engineering fundamentals, unusual curiosity about "why" decisions were made, and a systems-oriented mindset. When I asked him to optimize PL/SQL procedures in our compensation rules engine, he didn't only apply routine tuning; he examined architectural trade-offs, clarified constraints, and documented the rationale behind his choices. His work reduced response time by approximately 40%. He communicates clearly, handles feedback professionally, and improves designs without losing sight of operational constraints—qualities that make him reliable in real systems and credible in technical discussions.</p>
+                            </div>
+                            <div class="testimonial-slider__slide swiper-slide">
+                                <cite class="testimonial-slider__cite">
                                     <strong>Diana Saldaña Jiménez</strong>
-                                    <span>Assistant Professor of Practice of the Software Engineering Program at the University of Arizona.</span>
+                                    <span>Assistant Professor of Practice</span>
+                                    <span>University of Arizona</span>
                                 </cite>
                                 <p>Sherif was in my class, SFWE 301 Software Engineering Requirements Analysis and Testing, he demonstrated a high academic performance, always participating and showing skills on problem-solving, teamwork and technical skills as well in coding. I found that he was always ready to work and to push others to do the work they were supposed to do. Also, I noticed that he has great skills and ambitions in the software engineering field. He was in charge to lead his team during the developing of the SRS and implementation as well. I recall that I asked his team permission to share their first draft because they did a very good job.</p>
+                            </div>
+                            <div class="testimonial-slider__slide swiper-slide">
+                                <cite class="testimonial-slider__cite">
+                                    <strong>Dr. Fatma Abd-Alhaleem</strong>
+                                    <span>Assistant Professor</span>
+                                    <span>Assiut University</span>
+                                </cite>
+                                <p>Sherif has consistently demonstrated strong technical ability, intellectual curiosity, and a clear motivation to deepen his expertise. In one of his course assignments, he analyzed the impact of interference on wireless throughput using an experimental setup and presented his findings concisely—among the stronger submissions in the class. Beyond his technical capabilities, Sherif is highly disciplined and committed. He was always punctual, met deadlines reliably, and often submitted work that exceeded the basic requirements. I am confident that Sherif will make a meaningful and positive contribution.</p>
                             </div>
                             <div class="testimonial-slider__slide swiper-slide">
                                 <cite class="testimonial-slider__cite">
@@ -197,7 +248,7 @@
             <div class="row contact-top">
                 <div class="column lg-12">
                     <h2 class="text-pretitle">Get In Touch</h2>
-                    <p class="h1">I love to hear from you. Whether you have a question or just want to chat about design, tech & art — shoot me a message.</p>
+                    <p class="h1">Have a project in mind or a role to fill? I'd love to talk — whether it's backend architecture, API design, or AI features.</p>
                 </div>
             </div>
             <div class="row contact-bottom">
@@ -216,7 +267,8 @@
                     </ul>
                 </div>
                 <div class="column lg-4 md-12 contact-block">
-                    <a id="say-hello" href="#" target="_blank" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
+                    <a id="say-hello" href="#" target="_blank" class="mailtoui btn btn--medium u-fullwidth contact-btn">Let's Work Together →</a>
+                    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--color-text-light); text-align: center;">I typically reply within 24 hours.</p>
                 </div>
             </div>
         </section>
@@ -225,7 +277,7 @@
     <footer class="s-footer">
         <div class="row">
             <div class="column ss-copyright">
-                <span>© Copyright Sherif Elglaly 2021</span>
+                <span>© Copyright Sherif Elglaly 2025</span>
             </div>
             <div class="ss-go-top">
                 <a class="smoothscroll" title="Back to Top" href="#top">
@@ -236,8 +288,10 @@
     </footer>
 </div>
 
-<script src='js/plugins.js'></script>
-<script src='js/main.js'></script>
-<script src='js/portfolio.js'></script>
+<!-- Load scripts with defer for non-blocking -->
+<script src='js/plugins.js' defer></script>
+<script src='js/main.js' defer></script>
+<script src='js/portfolio.js' defer></script>
+<script src='js/animations.js' defer></script>
 </body>
 </html>

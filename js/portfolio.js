@@ -5,47 +5,44 @@ const profile = {
     address: "Cairo, Egypt",
     githubLink: "https://github.com/ELglaly",
     linkedinLink: "https://www.linkedin.com/in/sherif-elglaly/",
-    bio: "Software Engineer| USAID Scholar | University of Arizona Alumni",
-    cvLink: "https://drive.google.com/file/d/1fAYtBeMlPgOq1fGOxcNqI4VSxeVBwPjV/view?usp=sharing",
-    about: "My name is Sherif Shawashen. preferred by Sherif Elglaly. " +
-        "I am a and I am a Backend Software Engineer, USAID Scholar and University of Arizona Alumni," +
-        " currently ranked fourth in my department"+
-        ".When I first started studying Software Engineering, my goal was to improve my skills in software development. " +
-        "I have always been willing to adapt to new technologies because I believe that a growth mindset and continuous learning are key" +
-        " to success in our field. Over time, I have built a strong technical foundation in Java, Spring Boot, and modern development practices" +
-        "I am now seeking opportunities to apply my skills in designing and implementing scalable, efficient, and maintainable software solutions. " +
-        "My experience includes building backend systems, integrating APIs, and following best practices such as SOLID principles, " +
-        "clean architecture, and version control with Git. I am passionate about problem-solving and committed to delivering high-quality code through testing, " +
-        "documentation, and collaboration with cross-functional teams." +
-        "I aim to work in an environment that challenges me to innovate, sharpens my technical abilities, and allows me to contribute to impactful projects that make a real difference.",
-
+    bio: "Full-Stack Engineer specializing in Java/Spring Boot backends — building scalable APIs, AI-driven features, and production-ready systems.",
+    cvLink: "Sherif Shawashen_CV .pdf",
+    about: "I'm Sherif Elglaly — a Backend Engineer who builds fast, reliable systems using Java, Spring Boot, and PostgreSQL. USAID Scholar. University of Arizona alumnus (Dean's List, 4.0 GPA). Ranked 4th in my CS department. I care about the 'why' behind architectural decisions — whether that's choosing Redis over database caching, or designing an API contract before writing a single line of code. I've built AI-driven features, financial transaction systems handling 100K+ users, and a compiler for the Arabic language. Currently open to backend and full-stack roles where technical depth is valued.",
     skills: [
         { name: "C#", category: "Programming Languages", level: "Advanced" },
-        { name: "Python", category: "Programming Languages", level: "Intermediate" },
         { name: "C++", category: "Programming Languages", level: "Intermediate" },
         { name: "Java", category: "Programming Languages", level: "Advanced" },
-        { name: "R", category: "Programming Languages", level: "Beginner" },
+        { name: "JavaScript", category: "Programming Languages", level: "Intermediate" },
+        { name: "Python", category: "Programming Languages", level: "Intermediate" },
         { name: "Design Patterns", category: "Development Principles", level: "Advanced" },
         { name: "SOLID Principles", category: "Development Principles", level: "Advanced" },
         { name: "Data Structures & Algorithms", category: "Development Principles", level: "Advanced" },
         { name: "OOP", category: "Development Principles", level: "Advanced" },
         { name: "Agile", category: "Development Principles", level: "Advanced" },
-        { name: "ASP.NET", category: "Web Development", level: "Advanced" },
         { name: "HTML", category: "Web Development", level: "Advanced" },
         { name: "CSS", category: "Web Development", level: "Advanced" },
-        { name: "Bootstrap", category: "Web Development", level: "Intermediate" },
-        { name: "JSON", category: "Web Development", level: "Advanced" },
-        { name: "AJAX", category: "Web Development", level: "Intermediate" },
+        { name: "React.js", category: "Web Development", level: "Intermediate" },
         { name: "Spring Boot", category: "Web Development", level: "Advanced" },
+        { name: "Spring MVC", category: "Web Development", level: "Advanced" },
+        { name: "Spring Data JPA", category: "Web Development", level: "Advanced" },
         { name: "Spring Security", category: "Web Development", level: "Advanced" },
-        { name: "Spring Data", category: "Web Development", level: "Advanced" },
+        { name: "JWT & OAuth 2.0", category: "Web Development", level: "Advanced" },
+        { name: "Redis", category: "Web Development", level: "Intermediate" },
+        { name: "RabbitMQ", category: "Web Development", level: "Intermediate" },
+        { name: "AWS Fundamentals", category: "Web Development", level: "Intermediate" },
+        { name: "Oracle APEX", category: "Web Development", level: "Intermediate" },
         { name: ".NET", category: "Desktop Development", level: "Advanced" },
         { name: "JavaFX", category: "Desktop Development", level: "Advanced" },
-        { name: "Git", category: "Version Control", level: "Advanced" },
+        { name: "IntelliJ IDEA", category: "Tools", level: "Advanced" },
+        { name: "Swagger", category: "Tools", level: "Advanced" },
+        { name: "Postman", category: "Tools", level: "Advanced" },
+        { name: "Git & GitHub", category: "Tools", level: "Advanced" },
         { name: "JUnit 5", category: "Testing", level: "Intermediate" },
         { name: "Mockito", category: "Testing", level: "Intermediate" },
+        { name: "PostgreSQL", category: "Database", level: "Advanced" },
         { name: "MySQL", category: "Database", level: "Advanced" },
         { name: "SQL Server", category: "Database", level: "Advanced" },
+        { name: "PL/SQL", category: "Database", level: "Advanced" },
         { name: "Arabic", category: "Languages", level: "Native" },
         { name: "English", category: "Languages", level: "Fluent" }
     ],
@@ -61,12 +58,12 @@ const profile = {
         },
         {
             institutionName: "Assiut University",
-            degree: "Bachelor's degree, Computer Software Engineering",
+            degree: "Bachelor of Science in Computer Science - Software Engineering",
             location: "Assiut, Egypt",
             startDate: "Sep 2021",
-            endDate: "July 2025",
+            endDate: "Sep 2025",
             grade: "3.66",
-            description: "𝘼𝙘𝙖𝙙𝙚𝙢𝙞𝙘 𝘼𝙘𝙝𝙞𝙚𝙫𝙚𝙢𝙚𝙣𝙩: securing fourth place in the Software Engineering department"
+            description: "Ranked 4th in department. Selected as one of 140 full scholarship recipients for the USAID Scholars Activity program, funded by USAID and administered by the American University in Cairo."
         },
         {
             institutionName: "AUC - School of Continuing Education",
@@ -80,110 +77,124 @@ const profile = {
     ],
     experiences: [
         {
-            companyName: "Wavemakers United",
-            position: "Software Engineer (Part-time)",
-            startDate: "Mar 2024",
-            endDate: "Jul 2024",
-            description: "I was part of a three-member team developing the company's Educational Platform. My main responsibilities included:\n\n1. 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁 𝗚𝗮𝘁𝗵𝗲𝗿𝗶𝗻𝗴: Collaborated with the team to collect, analyze, and document system requirements, ensuring they matched the platform's goals and user needs.\n2. SRS Documentation: Created a detailed Software Requirements Specification (SRS), covering:\n   • Functional Requirements: User authentication, course management, and reporting.\n   • Non-Functional Requirements: Performance, scalability, and security.\n3. System Design: Assisted in designing the system architecture, defining components, their interactions, and data flow.\n\nSkills: Sustainable Development Goals (SDG), Software Development, Requirements Analysis, System Design, Documentation"
+            companyName: "MeetusAR",
+            position: "Software Engineer",
+            startDate: "Oct 2025",
+            endDate: "Present",
+            description: "Optimized PostgreSQL database queries and transaction isolation levels, reducing response times by 40%. Developed RESTful APIs for compensation rules engine with seamless bank integration, processing financial transactions with 99.9% accuracy. Built loyalty and referral transaction systems serving 100,000+ active users with real-time point tracking and redemption features.\n\nSkills: Spring Boot, PostgreSQL, RESTful APIs, Database Optimization, Financial Systems, Transaction Processing"
         },
         {
-            companyName: "ALMOSTAKBAL TECHNOLOGY",
+            companyName: "Contact Financial Holding",
+            position: "ERP Developer Intern",
+            startDate: "Sep 2025",
+            endDate: "Oct 2025",
+            description: "Developed and optimized complex PL/SQL stored procedures, functions, and packages for automated business processes. Work on responsive web applications using Oracle APEX for financial reporting dashboards and user management.\n\nSkills: PL/SQL, Oracle APEX, Financial Systems, Database Development"
+        },
+        {
+            companyName: "Wavemakers United",
+            position: "Software Engineer",
+            startDate: "May 2024",
+            endDate: "Aug 2024",
+            description: "Collaborated with the team to develop the Educational Platform, defining system requirements and ensuring alignment with user needs. Led the creation of the Software Requirements Specification, covering functional and non-functional requirements.\n\nSkills: Sustainable Development Goals (SDG), Software Development, Requirements Analysis, System Design, Documentation"
+        },
+        {
+            companyName: "Al Mostakbal Technology",
             position: "Software Engineer Intern",
             startDate: "Sep 2023",
             endDate: "Oct 2023",
-            description: "I worked with senior developers to build and optimize key features of the platform, focusing on performance and scalability. This included improving how the platform handled large amounts of data while keeping it fast and reliable.\n\nI also talked directly with customers to understand their needs and challenges. By listening to their feedback, I helped create solutions that worked for them. I followed up to make improvements, ensuring the final product met their expectations and was easy to use.\n\nSkills: Dart, Mobile Applications, Customer Engagement, Performance Optimization, Scalability"
+            description: "Engaged directly with customers to gather detailed requirements that aligned with their needs. Collaborated with senior developers to implement coding algorithms and data structures, optimizing performance.\n\nSkills: Customer Engagement, Algorithms, Data Structures, Performance Optimization"
+        },
+        {
+            companyName: "Green Assiut University Initiative",
+            position: "Mentor at SDGs Ambassadors Program",
+            startDate: "Jan 2024",
+            endDate: "Apr 2024",
+            description: "Guided and supported individuals in their pursuit of sustainable development goals (SDGs). Provided mentorship to participants, fostering their understanding of environmental issues and sustainable practices.\n\nSkills: Mentorship, Sustainable Development, Leadership, Environmental Awareness"
         }
     ],
     projects: [
         {
             id: 1,
-            name: "AI-Powered Learning Roadmap Generator",
-            type: "Rest API",
-            description: "An intelligent and modular Learning Roadmap Generator built with Spring Boot and integrated with AI services. The system creates personalized learning paths based on user preferences, experience levels, and target goals using AI-driven recommendations. It features real-time progress tracking via WebSocket, Redis caching for improved performance, and comprehensive resource management for each milestone.",
-            link: "https://github.com/ELglaly/Roadmap-Maker",
-            image: "images/icons/github.svg",
-            technologiesUsed: [
-                "☕ Java 23",
-                "🌱 Spring Boot",
-                "🔐 Spring Security with JWT",
-                "🔄 Spring WebSocket",
-                "🗂️ Spring Data JPA",
-                "🧠 Spring AI OpenAI",
-                "☁️ Google Cloud AI Platform",
-                "🛢️ MySQL",
-                "⚡ Redis 7.4.2",
-                "📦 Maven 3.9.9",
-                "🏷️ Lombok",
-                "🧩 MapStruct",
-                "🧪 JUnit 5"
-            ]
+            name: "Repo Buddy",
+            type: "IntelliJ Plugin · Developer Tool",
+            featured: true,
+            description: "An IntelliJ IDEA plugin that lets Spring Boot developers execute JPA repository methods directly from the IDE — no tests, no Postman, no deploy cycle. Click a gutter icon, fill in parameters, and instantly see query results, captured SQL, and execution timing. Published on the JetBrains Marketplace (v1.0.4) with 30+ random data generation rules and a built-in call-chain tracer for endpoint-to-repository mapping.",
+            link: "https://github.com/ELglaly/Repo-Buddy",
+            demoLink: null,
+            accent: "#eabe7c",
+            technologiesUsed: ["Java 17", "Spring Boot", "Spring Data JPA", "IntelliJ SDK", "Gradle", "Hibernate"]
         },
         {
             id: 2,
-            name: "E-commerce Platform",
-            type: "Rest API",
-            description: "A robust and scalable e-commerce platform built with Spring Boot. This system enables users to browse products, manage their shopping cart, and complete secure purchases. It includes an admin panel for managing products, orders, and users. Designed with modern best practices, this project is ideal for businesses looking to establish or expand their online presence.",
-            link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
-            image: "images/icons/github.svg",
-            technologiesUsed: [
-                "☕ Java",
-                "🌱 Spring Boot",
-                "🔐 Spring Security",
-                "🗂️ Spring Data JPA",
-                "📦 Hibernate",
-                "✉️ JavaMailSender",
-                "🛢️ MySQL",
-                "🧪 H2 Database (Testing)",
-                "⚡ Redis",
-                "🧪 Tested with JUnit 5 & Mockito",
-                "🔐 JWT-based"
-            ]
+            name: "AI Learning Roadmap Generator",
+            type: "AI Integration · Backend API",
+            featured: false,
+            description: "Generates personalized, step-by-step learning roadmaps by analyzing a user's experience level and goals via OpenAI and Google Cloud AI. Achieves 60% faster response times through Redis caching (300ms P95 latency). Real-time progress tracking over WebSocket with JWT/OAuth2 authentication and rate limiting.",
+            link: "https://github.com/ELglaly/Roadmap-Maker",
+            demoLink: null,
+            accent: "#764ba2",
+            technologiesUsed: ["Java 23", "Spring Boot", "Spring AI", "OpenAI", "Google Cloud AI", "Redis", "MySQL", "WebSocket", "JWT/OAuth2"]
         },
         {
             id: 3,
-            name: "Arabic Compiler",
-            type: "MVC Application",
-            description: "This project implements a Lexical Analyzer and Parser for a custom programming language that supports Arabic keywords. It features tokenization and syntactic analysis capabilities to build an Abstract Syntax Tree (AST) for source code interpretation.",
-            link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
-            image:"images/icons/github.svg",
-            technologiesUsed: [
-                "⚙️ C#",
-                "🌐 .NET Core",
-                "🧩 ASP.NET",
-                "📝 Visual Studio Code",
-                "🖼️ HTML",
-                "🎨 CSS"
-            ]
+            name: "E-commerce Platform API",
+            type: "Backend API · Full-Stack Ready",
+            featured: false,
+            description: "Production-grade e-commerce backend with 20+ REST endpoints covering catalog, cart, checkout, and order management. Stripe and PayPal payment integration, automated order emails, and 90%+ test coverage with JUnit 5 and Mockito. Role-based access control and Redis session management.",
+            link: "https://github.com/ELglaly/Ecommerce-SpringBoot",
+            demoLink: null,
+            accent: "#23967f",
+            technologiesUsed: ["Java", "Spring Boot", "Spring Security", "MySQL", "Stripe", "PayPal", "Redis", "JUnit 5", "Mockito"]
         },
         {
             id: 4,
-            name : "Pharmacy Management System Frontend",
-            type: "Desktop Application",
-            description: "A comprehensive frontend for a Pharmacy Management System (PMS) designed to streamline pharmacy operations. It supports prescription management, inventory control, sales and billing, reporting, and user management with secure authentication. The system enhances efficiency, accuracy, and customer service while ensuring regulatory compliance.",
+            name: "Arabic Programming Language Compiler",
+            type: "Compiler Design · Language Engineering",
+            featured: false,
+            description: "A compiler that lets Arabic-speaking developers write code in their native language — from lexer to AST. Achieves 95% syntax validation accuracy using automata theory. Ships with an ASP.NET MVC web UI for real-time tokenization visualization, cutting debug time by 40%.",
+            link: "https://github.com/ELglaly/Simple-Arabic-Compiler",
+            demoLink: null,
+            accent: "#2a5298",
+            technologiesUsed: ["C#", ".NET Core", "ASP.NET MVC", "Automata Theory", "Lexical Analysis", "SCSS"]
+        },
+        {
+            id: 5,
+            name: "Task Management API",
+            type: "Backend API · Clean Architecture",
+            featured: false,
+            description: "Secure, multi-tenant task management REST API with JWT authentication, role-based access control, and per-user data isolation. Built on Spring Boot 3.x with global exception handling, pagination, input validation, and clean repository-service-controller separation.",
+            link: "https://github.com/ELglaly/taskapi",
+            demoLink: null,
+            accent: "#c94b4b",
+            technologiesUsed: ["Java 17", "Spring Boot 3", "JWT", "Spring Security", "H2", "Maven"]
+        },
+        {
+            id: 6,
+            name: "Pharmacy Management System",
+            type: "Desktop Application · Healthcare",
+            featured: false,
+            description: "Full-featured pharmacy operations system covering prescription handling, inventory, billing, and role-based access. Built with TDD methodology to meet healthcare reliability standards. JavaFX UI with Scene Builder, fully documented with SRS and UML diagrams.",
             link: "https://github.com/ELglaly/Pharmacy-Frontend",
-            image: "images/PharmacyLogo.png",
-            technologiesUsed : [
-                "☕ Java",
-                "🖼️ JavaFX",
-                "🛢️ MySQL",
-                "🧪 H2 Database",
-                "📄 SRS",
-                "🧱 UML",
-                "🧪 Test Driven Development (TDD)",
-                "🗃️ Java Collections",
-                "🎨 JavaFX CSS",
-                "🧰 JavaFX Scene Builder"
-            ]
+            demoLink: null,
+            accent: "#2193b0",
+            technologiesUsed: ["Java", "JavaFX", "MySQL", "TDD", "Scene Builder", "UML"]
         }
     ]
     ,
     certifications: [
         {
             "institutionName": "Amazon",
-            "certificateName": " Amazon Junior Software Developer",
+            "certificateName": "Amazon Junior Software Developer",
             "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/OFP6DUB51UGY",
-            "date": "Issued June 2025",
-            "description": ""
+            "date": "Issued May 2025",
+            "description": "Professional certification demonstrating competency in software development fundamentals"
+        },
+        {
+            "institutionName": "Amazon",
+            "certificateName": "Generative AI in Software Development",
+            "certificateLink": "https://www.coursera.org/account/accomplishments/verify/JWABV1WWYVIT",
+            "date": "Issued May 2025",
+            "description": "Skills: Generative AI, AI-assisted Development, Prompt Engineering, Software Development"
         },
         {
             "institutionName": "Amazon",
@@ -203,7 +214,7 @@ const profile = {
             institutionName: "Amazon",
             certificateName: "Full Stack Web Development",
             certificateLink: "https://coursera.org/share/1e52f48401c03576a618e04e3c64d392",
-            date: "Issued Feb 2025",
+            date: "Issued Jan 2025",
             description: "Credential ID 0OF9PN6ZN4EN\nSkills: Java Development · Amazon Web Services (AWS)"
         },
         {
@@ -235,6 +246,34 @@ const profile = {
             description: "English language proficiency certification"
         },
         {
+            institutionName: "Ministry of Planning and Economic Development",
+            certificateName: "Be an Ambassador Initiative - Training of Trainers (TOT)",
+            certificateLink: "https://www.linkedin.com/posts/sherif-elglaly_tot-sustainabledevelopment-sdgs-activity-7227281904629121024-7-mI",
+            date: "Aug 2023 - Oct 2023",
+            description: "Successfully accepted into the program and completed Training of Trainers (TOT) sessions. Delivered a presentation with 5 team members on sustainable development. Skills: Sustainable Development, SDGs, Training, Leadership, Public Speaking"
+        },
+        {
+            institutionName: "Aspire Training Solution",
+            certificateName: "Leadership Program",
+            certificateLink: "#",
+            date: "Jun 2023 - Aug 2024",
+            description: "Studied diverse topics including self-awareness, life parasites, the principles of servant leadership, and how to be a team worker. Gave a presentation on Business Development, showcasing effective communication. Skills: Leadership, Self-awareness, Servant Leadership, Teamwork, Business Development"
+        },
+        {
+            institutionName: "Aspire Training Solution",
+            certificateName: "Employability Training",
+            certificateLink: "#",
+            date: "Jul 2023",
+            description: "Gained expertise in resume building, interview preparation, and professional networking. Enhanced communication, teamwork, and problem-solving abilities to improve workplace performance. Skills: Resume Building, Interview Preparation, Professional Networking, Communication, Teamwork"
+        },
+        {
+            institutionName: "ICPC Egypt",
+            certificateName: "Certificate of Qualification: ECPC 2023",
+            certificateLink: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK",
+            date: "Issued Aug 2023",
+            description: "Qualified for the Egyptian Collegiate Programming Contest (ECPC) 2023. Skills: Competitive Programming · Algorithms · Problem Solving"
+        },
+        {
             institutionName: "ICPC Mansoura",
             certificateName: "Game of Coders",
             certificateLink: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK",
@@ -259,15 +298,8 @@ const profile = {
             institutionName: "Amazon Web Services (AWS)",
             certificateName: "AWS Academy Introduction to Cloud Semester 1",
             certificateLink: "https://drive.google.com/file/d/1K_TfdHqTh-Hwf1siZwS8F5VhAVJAVEEA/view",
-            date: "Issued Sep 2022 · Expired Dec 2023",
+            date: "Issued Dec 2024",
             description: "Skills: Amazon Web Services (AWS) · Cloud Computing"
-        },
-        {
-            institutionName: "Meta",
-            certificateName: "Introduction to Databases",
-            certificateLink: "https://www.coursera.org/verify/ABC456",
-            date: "Issued Jun 2024",
-            description: "Skills: SQL · Databases · Database Management System (DBMS) · ERD"
         }
     ],
     awards: [
@@ -277,7 +309,7 @@ const profile = {
             title: "USAID Scholarship",
             description: "Successfully awarded a scholarship for my bachelor Degree in computer Science with 140 students by the United States Agency for International Development\n(USAID) in collaboration with the American University in Cairo.",
             images: "images/accomplishments/usaid2.jpg",
-            link: "#",
+            link: "",
             date: "2021-09-23"
         },
         {
@@ -333,18 +365,28 @@ const profile = {
             images: "images/accomplishments/green_dream_project.jpeg",
             date: "2023-11-01",
             link: "https://www.linkedin.com/posts/sherif-elglaly_itida-tiec-ministryofcommunications-activity-7134283303720824832-zFXQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 8,
+            organizationName: "The American University in Cairo",
+            title: "Research and Creativity Convention (EURECA) - Certificate of Recognition",
+            description: "Received a Certificate of Recognition for presenting 'Dr. Plant' at the 18th Annual Conference for Excellence in Undergraduate Research, Entrepreneurship, and Creative Achievement (EURECA). Developed Dr. Plant, a user-friendly mobile app to help farmers protect crops from diseases and pests, improving agricultural productivity.",
+            images: "images/accomplishments/usaid2.jpg",
+            date: "2024-02-01",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_eurecaconference-research-creativity-activity-7169674281201741824-nZWa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         }
     ]
 };
 
 
-// DOM Content Loaded
+// DOM Content Loaded - Optimized for performance
 document.addEventListener('DOMContentLoaded', function() {
-    // Basic Profile Info
+    // Basic Profile Info - Critical content first
     document.getElementById('profile-name').textContent = `I am ${profile.name}`;
     document.getElementById('profile-bio').textContent = profile.bio;
     document.getElementById('profile-about').textContent = profile.about;
     document.getElementById('cv-link').href = profile.cvLink;
+    document.getElementById('cv-link-hero').href = profile.cvLink;
     document.getElementById('linkedin-link').href = profile.linkedinLink;
     document.getElementById('github-link').href = profile.githubLink;
     document.getElementById('contact-email').href = `mailto:${profile.contactEmail}`;
@@ -355,8 +397,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('github-contact').href = profile.githubLink;
     document.getElementById('say-hello').href = `mailto:${profile.contactEmail}`;
 
-    // Education
+    // Education - Use DocumentFragment for batch insert
     const educationContainer = document.getElementById('education-container');
+    const eduFragment = document.createDocumentFragment();
     profile.education.forEach(edu => {
         const eduBlock = document.createElement('div');
         eduBlock.className = 'timeline__block';
@@ -373,11 +416,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${edu.description}</p>
             </div>
         `;
-        educationContainer.appendChild(eduBlock);
+        eduFragment.appendChild(eduBlock);
     });
+    educationContainer.appendChild(eduFragment);
 
-    // Experience
+    // Experience - Use DocumentFragment for batch insert
     const experienceContainer = document.getElementById('experience-container');
+    const expFragment = document.createDocumentFragment();
     profile.experiences.forEach(exp => {
         const expBlock = document.createElement('div');
         expBlock.className = 'timeline__block';
@@ -392,43 +437,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>${exp.description.replace(/\n/g, '<br>')}</p>
             </div>
         `;
-        experienceContainer.appendChild(expBlock);
+        expFragment.appendChild(expBlock);
     });
+    experienceContainer.appendChild(expFragment);
 
-    // Projects
-
+    // Projects — Showcase Row layout
     const projectsContainer = document.getElementById('projects-container');
+    const projFragment = document.createDocumentFragment();
+    const ghSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`;
 
-// Render projects
-    profile.projects.forEach(project => {
-        const projectItem = document.createElement('li');
-        projectItem.className = 'folio-list__item column';
-        projectItem.setAttribute('data-animate-el', '');
-        projectItem.innerHTML = `
-        <div class="folio-list__item-link" " data-project-id="${project.id}">
-            <div class="folio-list__item-pic">
-                <img src="${project.image}" alt="${project.name}" class="timeline__image" loading="lazy" />
-            </div>
-            <div class="folio-list__item-text">
-                <div class="folio-list__item-cat">${project.type || 'Uncategorized'}</div>
-                <div class="folio-list__item-title">${project.name}</div>
-            </div>
-        </div>
-          <div style="margin-bottom: 20px">
-              <p>${project.description}</p>
-                    <ul class="modal-popup__cat">
-                        ${project.technologiesUsed.map(tech => `<li>${tech}</li>`).join('')}
-                    </ul>
-          </div>
+    profile.projects.forEach((project, index) => {
+        const row = document.createElement('li');
+        row.className = 'project-row';
+        row.style.setProperty('--accent', project.accent);
 
-          <a href="${project.link}" target="_blank" class="btn btn-primary mt-auto">GitHub link</a>
-    `;
-        projectsContainer.appendChild(projectItem);
+        const num = String(index + 1).padStart(2, '0');
+        const publishedBadge = project.featured
+            ? `<span class="proj-badge proj-badge--published">Published on JetBrains Marketplace</span>`
+            : '';
+        const demoBtn = project.demoLink
+            ? `<a href="${project.demoLink}" target="_blank" rel="noopener" class="btn-proj-demo">Live Demo ↗</a>`
+            : '';
+
+        row.innerHTML = `
+            <div class="proj-num">${num}</div>
+            <div class="proj-left">
+                <div class="proj-type">${project.type}</div>
+                <h3 class="proj-name">${project.name}</h3>
+                <div class="proj-tech">
+                    ${project.technologiesUsed.map(t => `<span class="proj-chip">${t}</span>`).join('')}
+                </div>
+            </div>
+            <div class="proj-right">
+                ${publishedBadge}
+                <p class="proj-desc">${project.description}</p>
+                <div class="proj-actions">
+                    <a href="${project.link}" target="_blank" rel="noopener" class="btn-proj-code">${ghSvg} View Code</a>
+                    ${demoBtn}
+                </div>
+            </div>`;
+        projFragment.appendChild(row);
     });
+    projectsContainer.appendChild(projFragment);
 
-
-    // Certificates
+    // Certificates - Use DocumentFragment for batch insert
     const certificatesContainer = document.getElementById('certificateElement');
+    const certFragment = document.createDocumentFragment();
     profile.certifications.forEach(cert => {
         const certElement = document.createElement('div');
         certElement.setAttribute('data-institution', cert.institutionName.toLowerCase());
@@ -440,14 +494,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         <h4 class="timeline__title">${cert.certificateName}</h4>
                         <h5 class="timeline__meta">${cert.institutionName}</h5>
                         <p class="timeline__timeframe">${cert.date}</p>
-                        <a href="${cert.certificateLink}" target="_blank" class="btn btn-primary mt-auto"
-                        >View Certificate</a>
+                        <a href="${cert.certificateLink}" target="_blank" class="btn btn-primary mt-auto">View Certificate</a>
                     </div>
                 </div>
             </div>
         `;
-        certificatesContainer.appendChild(certElement);
+        certFragment.appendChild(certElement);
     });
+    certificatesContainer.appendChild(certFragment);
 
     // Certificate Filtering
     document.querySelectorAll('#filterCertificate .filter-btn').forEach(btn => {
@@ -466,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Skills
+    // Skills - Use DocumentFragment for batch insert
     const skillsContainer = document.getElementById('skills-container');
     const skillsByCategory = profile.skills.reduce((acc, skill) => {
         if (!acc[skill.category]) acc[skill.category] = [];
@@ -474,6 +528,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return acc;
     }, {});
 
+    const skillsFragment = document.createDocumentFragment();
     Object.entries(skillsByCategory).forEach(([category, skills]) => {
         const skillBlock = document.createElement('div');
         skillBlock.className = 'timeline';
@@ -489,38 +544,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `;
-        skillsContainer.appendChild(skillBlock);
+        skillsFragment.appendChild(skillBlock);
     });
+    skillsContainer.appendChild(skillsFragment);
 
-    // Accomplishments
+    // Accomplishments - Use DocumentFragment for batch insert
     const accomplishmentsContainer = document.getElementById('accomplishments-container');
+    const awardsFragment = document.createDocumentFragment();
     profile.awards.forEach(award => {
         const awardElement = document.createElement('div');
         awardElement.className = 'timeline';
         awardElement.setAttribute('data-animate-el', '');
         awardElement.innerHTML = `
-    <div class="timeline__block">
-        <div class="timeline__bullet"></div>
-        <div class="timeline__header">
-            ${award.id % 2 !== 0 ? `
-                <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
-                 <img src="images/icons/arrow.png" alt="${award.title}" loading="lazy" class="arrow-down" />
-            ` : ''}
-
-            <h4 class="timeline__title">${award.title}</h4>
-            <h5 class="timeline__meta">${award.organizationName}</h5>
-            <p class="timeline__timeframe">${award.date}</p>
-            <p>${award.description}</p>
-
-            ${award.id % 2 === 0 ? `
-               <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" loading="lazy" />
-                <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
-            ` : ''}
-
-            <a href="${award.link}" target="_blank" class="btn btn-primary mt-auto">More Details</a>
-        </div>
-    </div>
-`;
-        accomplishmentsContainer.appendChild(awardElement);
+            <div class="timeline__block">
+                <div class="timeline__bullet"></div>
+                <div class="timeline__header">
+                    ${award.id % 2 !== 0 ? `
+                        <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
+                        <img src="images/icons/arrow.png" alt="${award.title}" loading="lazy" class="arrow-down" />
+                    ` : ''}
+                    <h4 class="timeline__title">${award.title}</h4>
+                    <h5 class="timeline__meta">${award.organizationName}</h5>
+                    <p class="timeline__timeframe">${award.date}</p>
+                    <p>${award.description}</p>
+                    ${award.id % 2 === 0 ? `
+                        <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" loading="lazy" />
+                        <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
+                    ` : ''}
+                    <a href="${award.link}" target="_blank" class="btn btn-primary mt-auto">More Details</a>
+                </div>
+            </div>
+        `;
+        awardsFragment.appendChild(awardElement);
     });
+    accomplishmentsContainer.appendChild(awardsFragment);
 });
