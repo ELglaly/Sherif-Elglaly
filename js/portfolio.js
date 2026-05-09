@@ -120,6 +120,16 @@ const profile = {
             featured: true,
             description: "An IntelliJ IDEA plugin that lets Spring Boot developers execute JPA repository methods directly from the IDE — no tests, no Postman, no deploy cycle. Click a gutter icon, fill in parameters, and instantly see query results, captured SQL, and execution timing. Published on the JetBrains Marketplace (v1.0.4) with 30+ random data generation rules and a built-in call-chain tracer for endpoint-to-repository mapping.",
             link: "https://github.com/ELglaly/Repo-Buddy",
+            actions: [
+                {
+                    label: "Marketplace",
+                    url: "https://plugins.jetbrains.com/plugin/31285-repobuddy"
+                },
+                {
+                    label: "Video",
+                    url: "https://youtu.be/8yRTKROH5lU"
+                }
+            ],
             demoLink: null,
             accent: "#eabe7c",
             technologiesUsed: ["Java 17", "Spring Boot", "Spring Data JPA", "IntelliJ SDK", "Gradle", "Hibernate"]
@@ -157,28 +167,6 @@ const profile = {
             accent: "#2a5298",
             technologiesUsed: ["C#", ".NET Core", "ASP.NET MVC", "Automata Theory", "Lexical Analysis", "SCSS"]
         },
-        {
-            id: 5,
-            name: "Task Management API",
-            type: "Backend API · Clean Architecture",
-            featured: false,
-            description: "Secure, multi-tenant task management REST API with JWT authentication, role-based access control, and per-user data isolation. Built on Spring Boot 3.x with global exception handling, pagination, input validation, and clean repository-service-controller separation.",
-            link: "https://github.com/ELglaly/taskapi",
-            demoLink: null,
-            accent: "#c94b4b",
-            technologiesUsed: ["Java 17", "Spring Boot 3", "JWT", "Spring Security", "H2", "Maven"]
-        },
-        {
-            id: 6,
-            name: "Pharmacy Management System",
-            type: "Desktop Application · Healthcare",
-            featured: false,
-            description: "Full-featured pharmacy operations system covering prescription handling, inventory, billing, and role-based access. Built with TDD methodology to meet healthcare reliability standards. JavaFX UI with Scene Builder, fully documented with SRS and UML diagrams.",
-            link: "https://github.com/ELglaly/Pharmacy-Frontend",
-            demoLink: null,
-            accent: "#2193b0",
-            technologiesUsed: ["Java", "JavaFX", "MySQL", "TDD", "Scene Builder", "UML"]
-        }
     ]
     ,
     certifications: [
@@ -455,9 +443,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const publishedBadge = project.featured
             ? `<span class="proj-badge proj-badge--published">Published on JetBrains Marketplace</span>`
             : '';
-        const demoBtn = project.demoLink
-            ? `<a href="${project.demoLink}" target="_blank" rel="noopener" class="btn-proj-demo">Live Demo ↗</a>`
-            : '';
+        const extraActions = [
+            ...(project.demoLink
+                ? [{ label: "Live Demo", url: project.demoLink }]
+                : []),
+            ...(project.actions || [])
+        ];
+        const actionButtons = extraActions
+            .map(action => `<a href="${action.url}" target="_blank" rel="noopener" class="btn-proj-demo">${action.label} ↗</a>`)
+            .join('');
 
         row.innerHTML = `
             <div class="proj-num">${num}</div>
@@ -473,7 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="proj-desc">${project.description}</p>
                 <div class="proj-actions">
                     <a href="${project.link}" target="_blank" rel="noopener" class="btn-proj-code">${ghSvg} View Code</a>
-                    ${demoBtn}
+                    ${actionButtons}
                 </div>
             </div>`;
         projFragment.appendChild(row);
