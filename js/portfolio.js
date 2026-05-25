@@ -128,6 +128,10 @@ const profile = {
                 {
                     label: "Video",
                     url: "https://youtu.be/8yRTKROH5lU"
+                },
+                {
+                    label: "Website",
+                    url: "https://repobuddy-plugin.vercel.app/"
                 }
             ],
             demoLink: null,
@@ -173,7 +177,7 @@ const profile = {
         {
             "institutionName": "Amazon",
             "certificateName": "Amazon Junior Software Developer",
-            "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/OFP6DUB51UGY",
+            "certificateLink": "https://www.coursera.org/account/accomplishments/specialization/QOBO5MA3BX5G",
             "date": "Issued May 2025",
             "description": "Professional certification demonstrating competency in software development fundamentals"
         },
