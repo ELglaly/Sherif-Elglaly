@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elglaly.github.io/sitemap.xml
+Sitemap: https://elglaly.github.io/Sherif-Elglaly/sitemap.xml
