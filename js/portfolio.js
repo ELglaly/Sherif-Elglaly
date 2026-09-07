@@ -62,7 +62,7 @@ const profile = {
             location: "Assiut, Egypt",
             startDate: "Sep 2021",
             endDate: "Sep 2025",
-            grade: "3.66",
+            grade: "3.67",
             description: "Ranked 4th in department. Selected as one of 140 full scholarship recipients for the USAID Scholars Activity program, funded by USAID and administered by the American University in Cairo."
         },
         {
