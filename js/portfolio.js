@@ -140,6 +140,17 @@ const profile = {
         },
         {
             id: 2,
+            name: "SchoolBridge API",
+            type: "Multi-tenant Backend API · Education Platform",
+            featured: false,
+            description: "A secure school-to-parent communication platform for announcements, attendance, homework, and grades. Supports WhatsApp, SMS, and push notifications with tenant isolation, JWT/OTP authentication, and optional AI assistance for school workflows.",
+            link: "https://github.com/ELglaly/D2S",
+            demoLink: null,
+            accent: "#3aa6a0",
+            technologiesUsed: ["Java 21", "Spring Boot 3.4", "PostgreSQL", "pgvector", "RabbitMQ", "Redis", "MinIO/S3", "Liquibase", "JWT/OTP", "Docker"]
+        },
+        {
+            id: 3,
             name: "AI Learning Roadmap Generator",
             type: "AI Integration · Backend API",
             featured: false,
@@ -150,7 +161,7 @@ const profile = {
             technologiesUsed: ["Java 23", "Spring Boot", "Spring AI", "OpenAI", "Google Cloud AI", "Redis", "MySQL", "WebSocket", "JWT/OAuth2"]
         },
         {
-            id: 3,
+            id: 4,
             name: "E-commerce Platform API",
             type: "Backend API · Full-Stack Ready",
             featured: false,
@@ -161,7 +172,7 @@ const profile = {
             technologiesUsed: ["Java", "Spring Boot", "Spring Security", "MySQL", "Stripe", "PayPal", "Redis", "JUnit 5", "Mockito"]
         },
         {
-            id: 4,
+            id: 5,
             name: "Arabic Programming Language Compiler",
             type: "Compiler Design · Language Engineering",
             featured: false,
