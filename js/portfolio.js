@@ -373,7 +373,7 @@ const profile = {
             id: 8,
             organizationName: "The American University in Cairo",
             title: "Research and Creativity Convention (EURECA) - Certificate of Recognition",
-            description: "Received a Certificate of Recognition for presenting 'Dr. Plant' at the 18th Annual Conference for Excellence in Undergraduate Research, Entrepreneurship, and Creative Achievement (EURECA). Developed Dr. Plant, a user-friendly mobile app to help farmers protect crops from diseases and pests, improving agricultural productivity.",
+            description: "Received a Certificate of Recognition for presenting a research poster 'Dr. Plant' at the 18th Annual Conference for Excellence in Undergraduate Research, Entrepreneurship, and Creative Achievement (EURECA). Developed Dr. Plant, a user-friendly mobile app to help farmers protect crops from diseases and pests, improving agricultural productivity.",
             images: "images/accomplishments/usaid2.jpg",
             date: "2024-02-01",
             link: "https://www.linkedin.com/posts/sherif-elglaly_eurecaconference-research-creativity-activity-7169674281201741824-nZWa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
