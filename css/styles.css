@@ -3532,6 +3532,60 @@ img.u-pull-left {
     display: block;
 
 }
+
+.accomplishment-gallery {
+    width: min(350px, 100%);
+}
+
+.accomplishment-gallery .timeline__image {
+    width: 100%;
+}
+
+.accomplishment-gallery__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .45rem;
+    margin-top: .55rem;
+}
+
+.accomplishment-gallery__button {
+    width: 3.4rem;
+    height: 3.4rem;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .06);
+    color: white;
+    cursor: pointer;
+    font: 400 1.8rem/1 sans-serif;
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.accomplishment-gallery__button:hover,
+.accomplishment-gallery__button:focus-visible {
+    background: var(--color-1);
+    border-color: var(--color-1);
+    color: var(--color-body);
+}
+
+.accomplishment-gallery__button:active {
+    transform: translateY(1px);
+}
+
+.accomplishment-gallery__button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+.accomplishment-gallery__count {
+    min-width: 3.2rem;
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: .08em;
+    text-align: center;
+}
 .arrow {
     width: 0;
     height: 0;

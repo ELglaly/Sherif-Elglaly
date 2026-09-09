@@ -311,7 +311,7 @@ const profile = {
             organizationName: "USAID Egypt",
             title: "USAID Scholarship",
             description: "Successfully awarded a scholarship for my bachelor Degree in computer Science with 140 students by the United States Agency for International Development\n(USAID) in collaboration with the American University in Cairo.",
-            images: "images/accomplishments/usaid2.jpg",
+            images: ["images/accomplishments/usaid2.jpg"],
             link: "",
             date: "2021-09-23"
         },
@@ -320,64 +320,69 @@ const profile = {
             organizationName: "University of Arizona | Scholarship Program",
             title: "Scholarship Recipient – Semester Abroad (Fall 2024, 4.0 GPA)",
             description: "Awarded a scholarship to study abroad at the University of Arizona for the Fall 2024 semester, achieving a 4.0 GPA. Additionally contributed to research initiatives at the College of Engineering.",
-            images: "images/accomplishments/uofajpeg.jpeg",
+            images: ["images/accomplishments/uofajpeg.jpeg"],
             date: "2024-8-20 : 2024-12-21",
             link: "https://www.linkedin.com/posts/sherif-elglaly_studyabroad-universityofarizona-softwaredevelopment-activity-7296535485491912704-PM5o?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
             id: 3,
+            organizationName: "The American University in Cairo",
+            title: "Research and Creativity Convention (EURECA) - Certificate of Recognition",
+            description: "Received a Certificate of Recognition for presenting a research poster 'Dr. Plant' at the 18th Annual Conference for Excellence in Undergraduate Research, Entrepreneurship, and Creative Achievement (EURECA). Developed Dr. Plant, a user-friendly mobile app to help farmers protect crops from diseases and pests, improving agricultural productivity.",
+            images: [
+                "images/accomplishments/EURECA_1.jpeg",
+                "images/accomplishments/EURECA_2.jpeg",
+                "images/accomplishments/EURECA_3.jpeg"
+            ],
+            date: "2024-02-01",
+            link: "https://www.linkedin.com/posts/sherif-elglaly_eurecaconference-research-creativity-activity-7169674281201741824-nZWa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
+        },
+        {
+            id: 4,
             organizationName: "Ministry of Planning and Economic Development & NIGSD",
             title: "Certified Sustainable Development Trainer",
             description: "Officially certified as a Sustainable Development Trainer for the next two years after intensive training in soft skills, sustainable development, and governance, as part of a Train-the-Trainer program.",
-            images: "images/accomplishments/tottraining.jpeg",
+            images: ["images/accomplishments/tottraining.jpeg"],
             date: "2023-10-25",
             link: "https://www.linkedin.com/posts/sherif-elglaly_tot-sustainabledevelopment-sdgs-activity-7227281904629121024-7-mI?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 4,
+            id: 5,
             organizationName: "ICPC Mansoura",
             title: "Top 10 – Game of Coders Competition",
             description: "Awarded for achieving a top 10 position in the Game of Coders competitive programming competition, showcasing strong problem-solving skills and teamwork.",
-            images: "images/accomplishments/gameofcoder.jpeg",
+            images: ["images/accomplishments/gameofcoder.jpeg"],
             date: "2023-07-26",
             link: "https://drive.google.com/drive/folders/1okDaaK--EBTT3rwpUUW2O22QlhdgsbZK"
         },
         {
-            id: 5,
+            id: 6,
             organizationName: "Hult Prize – Assiut University",
             title: "1st Place – Hult Prize Assiut University",
             description: "Awarded 1st place for a project focused on biofuel production through bacterial fermentation and agricultural waste, showcasing innovation, sustainability, and entrepreneurial spirit.",
-            images: "images/accomplishments/hult_prize.jpeg",
+            images: ["images/accomplishments/hult_prize.jpeg"],
             date: "2024-03-01",
             link: "https://www.linkedin.com/posts/pola-frans_hultprizewinner-biofuelinnovation-assiutuniversity-ugcPost-7171944912186294272-iwpL?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 6,
+            id: 7,
             organizationName: "AUC Center for Entrepreneurship and Innovation (CEI)",
             title: "Completion of Entrepreneurship Program & Seed Funding Award",
             description: "Successfully completed an intensive entrepreneurship program at AUC CEI. Pitched the 'NextGen' project, leading to securing $30K in seed funding.",
-            images: "images/accomplishments/CEI.jpeg",
+            images: ["images/accomplishments/CEI.jpeg"],
             date: "2024-02-01",
             link: "https://www.linkedin.com/posts/sherif-elglaly_entrepreneurship-auc-cei-activity-7298049656280776705-qyvm?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
         {
-            id: 7,
+            id: 8,
             organizationName: "Ministry of Communications | ITIDA",
             title: "Top 10 Startup – Pre-Incubation Program 2023",
             description: "Led a team of 4 in developing 'The Green Dream' platform, an innovative web-based solution for responsible waste management. Successfully positioned the project among the top 10 startups selected for the prestigious pre-incubation program organized by ITIDA, TIEC, and the Ministry of Communications.",
-            images: "images/accomplishments/green_dream_project.jpeg",
+            images: ["images/accomplishments/green_dream_project.jpeg"],
             date: "2023-11-01",
             link: "https://www.linkedin.com/posts/sherif-elglaly_itida-tiec-ministryofcommunications-activity-7134283303720824832-zFXQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
         },
-        {
-            id: 8,
-            organizationName: "The American University in Cairo",
-            title: "Research and Creativity Convention (EURECA) - Certificate of Recognition",
-            description: "Received a Certificate of Recognition for presenting a research poster 'Dr. Plant' at the 18th Annual Conference for Excellence in Undergraduate Research, Entrepreneurship, and Creative Achievement (EURECA). Developed Dr. Plant, a user-friendly mobile app to help farmers protect crops from diseases and pests, improving agricultural productivity.",
-            images: "images/accomplishments/usaid2.jpg",
-            date: "2024-02-01",
-            link: "https://www.linkedin.com/posts/sherif-elglaly_eurecaconference-research-creativity-activity-7169674281201741824-nZWa?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsZRV8Bv4m4WZ1msQzpVXuMyTE8adz5KJA"
-        }
+
     ]
 };
 
@@ -561,6 +566,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const accomplishmentsContainer = document.getElementById('accomplishments-container');
     const awardsFragment = document.createDocumentFragment();
     profile.awards.forEach(award => {
+        // Add any number of image paths to an accomplishment's `images` array.
+        // String values remain supported so older entries do not break.
+        const awardImages = Array.isArray(award.images) ? award.images : [award.images];
+        const hasMultipleImages = awardImages.length > 1;
         const awardElement = document.createElement('div');
         awardElement.className = 'timeline';
         awardElement.setAttribute('data-animate-el', '');
@@ -569,7 +578,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="timeline__bullet"></div>
                 <div class="timeline__header">
                     ${award.id % 2 !== 0 ? `
-                        <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
+                        <div class="accomplishment-gallery">
+                            <img src="${awardImages[0]}" alt="${award.title} — photo 1 of ${awardImages.length}" class="timeline__image" loading="lazy" />
+                            ${hasMultipleImages ? `
+                                <div class="accomplishment-gallery__controls" aria-label="Change ${award.title} photo">
+                                    <button type="button" class="accomplishment-gallery__button" data-gallery-action="previous" aria-label="Show previous photo" title="Previous photo"><span aria-hidden="true">←</span></button>
+                                    <span class="accomplishment-gallery__count" aria-live="polite">1 / ${awardImages.length}</span>
+                                    <button type="button" class="accomplishment-gallery__button" data-gallery-action="next" aria-label="Show next photo" title="Next photo"><span aria-hidden="true">→</span></button>
+                                </div>
+                            ` : ''}
+                        </div>
                         <img src="images/icons/arrow.png" alt="${award.title}" loading="lazy" class="arrow-down" />
                     ` : ''}
                     <h4 class="timeline__title">${award.title}</h4>
@@ -578,12 +596,39 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>${award.description}</p>
                     ${award.id % 2 === 0 ? `
                         <img src="images/icons/arrow.png" alt="${award.title}" class="arrow-up" loading="lazy" />
-                        <img src="${award.images}" alt="${award.title}" class="timeline__image" loading="lazy" />
+                        <div class="accomplishment-gallery">
+                            <img src="${awardImages[0]}" alt="${award.title} — photo 1 of ${awardImages.length}" class="timeline__image" loading="lazy" />
+                            ${hasMultipleImages ? `
+                                <div class="accomplishment-gallery__controls" aria-label="Change ${award.title} photo">
+                                    <button type="button" class="accomplishment-gallery__button" data-gallery-action="previous" aria-label="Show previous photo" title="Previous photo"><span aria-hidden="true">←</span></button>
+                                    <span class="accomplishment-gallery__count" aria-live="polite">1 / ${awardImages.length}</span>
+                                    <button type="button" class="accomplishment-gallery__button" data-gallery-action="next" aria-label="Show next photo" title="Next photo"><span aria-hidden="true">→</span></button>
+                                </div>
+                            ` : ''}
+                        </div>
                     ` : ''}
                     <a href="${award.link}" target="_blank" class="btn btn-primary mt-auto">More Details</a>
                 </div>
             </div>
         `;
+
+        if (hasMultipleImages) {
+            let currentImageIndex = 0;
+            const image = awardElement.querySelector('.timeline__image');
+            const imageCount = awardElement.querySelector('.accomplishment-gallery__count');
+
+            awardElement.querySelectorAll('[data-gallery-action]').forEach(button => {
+                button.addEventListener('click', () => {
+                    currentImageIndex = button.dataset.galleryAction === 'next'
+                        ? (currentImageIndex + 1) % awardImages.length
+                        : (currentImageIndex - 1 + awardImages.length) % awardImages.length;
+
+                    image.src = awardImages[currentImageIndex];
+                    image.alt = `${award.title} — photo ${currentImageIndex + 1} of ${awardImages.length}`;
+                    imageCount.textContent = `${currentImageIndex + 1} / ${awardImages.length}`;
+                });
+            });
+        }
         awardsFragment.appendChild(awardElement);
     });
     accomplishmentsContainer.appendChild(awardsFragment);
